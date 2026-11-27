@@ -17,7 +17,7 @@ MARKERS = {
     "competing": {"initial.txt": "initial marker\n", "competing.txt": "competing marker\n"},
 }
 GIT_ENV = {
-    **os.environ,
+    **{key: value for key, value in os.environ.items() if not key.startswith("GIT_")},
     "GIT_CONFIG_NOSYSTEM": "1",
     "GIT_CONFIG_GLOBAL": os.devnull,
     "GIT_AUTHOR_NAME": "BOA Canary",
@@ -102,7 +102,8 @@ class Host:
         elif (grant["issuer"] != "Mitchell" or not grant["active"] or
               grant["action"] != request["action"] or grant["revision"] != request["revision"]):
             verdict = "no_current_grant"
-        elif receipt["status"] != "passed" or receipt["revision"] != request["revision"]:
+        elif (receipt["id"] != "canary-ready" or receipt["status"] != "passed"
+              or receipt["revision"] != request["revision"]):
             verdict = "missing_receipt"
         elif observed_ref != target:
             verdict = "revision_moved"
@@ -199,7 +200,16 @@ def run_case(case):
                 ))
                 for readback, label in readbacks
             )
-            row["status"] = "passed" if observed == case["expect"] and row["git_readbacks_match"] else "failed"
+            checks_pass = observed == case["expect"] and row["git_readbacks_match"]
+            if case["interleave"] == "compete":
+                first_git = attempts[0]["git"]
+                expected_error = f"is at {commits['competing']} but expected {initial}"
+                row["expected_old_rejection"] = (
+                    first_git is not None and first_git["exit"] != 0
+                    and expected_error in first_git["stderr"]
+                )
+                checks_pass = checks_pass and row["expected_old_rejection"]
+            row["status"] = "passed" if checks_pass else "failed"
     except (OSError, RuntimeError) as error:
         row.update(status="inconclusive", error=str(error))
     return row

@@ -12,9 +12,11 @@ Every case creates its own disposable repository. A simulated Mitchell supplies
 the scoped grant and a held readiness receipt. A simulated Al recommendation
 does not satisfy the grant. The host owns the repository path, ref, intended
 commit and write operation. The request supplies only action and expected
-revision. The host rechecks it before dispatch. In the competition cases a
+revision. The host rechecks it before dispatch. The runner clears inherited
+Git environment variables so they cannot redirect the fixture to another repo. In the competition cases a
 fixture writer advances the ref after that recheck, before Betty's
-`git update-ref` with its expected-old argument.
+`git update-ref` with its expected-old argument. A competition case requires the Git error to
+name the actual competing and expected initial commits.
 
 The runner reads the ref, markers, parent and diff separately from the writer.
 It retains each writer's stdout, stderr and exit status. The case fails if the
