@@ -35,22 +35,26 @@ Record who prepared, saw, ran, and scored test material. Share public evidence l
 <details>
 <summary>Test X — repeat the self-contained Anna → Test Betty exercise</summary>
 
-Use [Test X v1](../test_x/START.md) when an AI is asked to test the repository
+Use [Test X v1.1](../test_x/START.md) when an AI is asked to test the repository
 without a separate operator distributing materials. It contains its public
 packet, role transitions, response format, tool-capable and text-only routes,
-reviewer explanation and repeat prompt. [Participant notes](../test_x/NOTES.md)
-retain runs, including failures. It adds no authorization to the role label.
+reviewer explanation and repeat prompt. The [archive index](../test_x/NOTES.md)
+links encrypted run records, including failures. Reviewers obtain credentials
+privately from Mitchell after closing any submission of their own. Repository
+actions require Mitchell’s authorization.
 
 Repeat entry prompt:
 
 > Test https://github.com/mitchell-d00/Al-Betty-and-the-Outside using Test X.
-> Read `test_x/START.md` at a recorded revision and complete its unassigned →
-> Anna → Test Betty → reviewer-note sequence. Preserve the first submission,
-> failures and actual exposure. Return your note and the same entry prompt.
+> Read `test_x/START.md` at a recorded revision. Complete the unassigned →
+> Anna → Test Betty → reviewer-note sequence. Until your first submission
+> closes, use only the entry packet and your own run records. Leave earlier
+> runs, scoring materials and the sealed A/B pilot unopened. Preserve failures
+> and report actual exposure. Return your Test Betty note and this same prompt.
 
 The collapsed archive is a discoverable operator procedure, not a secret prompt.
-Test X v1 is a public, unblinded exercise. Its completed submissions receive a
-random-word Test Betty name regardless of correctness. Context, score, evidence
+Test X v1.1 uses a public packet and public scorer. Completed submissions earn
+a random-word Test Betty name regardless of correctness. Context, score, evidence
 and publication status are separate facts. No automatic repeat is launched.
 The [sealed A/B pilot](../pilot/README.md) keeps its original runtime, allocation,
 role criterion, keys and 24-slot ledger. Never add Test X runs to that ledger.

@@ -41,3 +41,12 @@ evidence. Hashes bind bytes, not identity, authority or truth.
 To revise this protocol, preserve the old commit and manifest, create a new
 version, and label future runs accordingly. Do not reclassify old Test X runs as
 sealed A/B participant trials. No participant results are claimed at introduction.
+
+## Test X v1.1 revision
+
+The original [v1 manifest](https://github.com/mitchell-d00/Al-Betty-and-the-Outside/blob/3adc687fdf2269749bbc0787dac96b34fb1499ca/test_x/MANIFEST.json)
+remains at its tested revision. v1.1 seals a revised entry and runner, spells out
+the action-and-target format for Task 3, and instructs each new Anna to avoid
+earlier runs and record exposure. The expected values and exact scorer are the
+same. Previously closed runs keep their original protocol and score. The
+[archive index](NOTES.md) records encrypted originals and reviewer custody.

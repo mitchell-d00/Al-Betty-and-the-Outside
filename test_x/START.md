@@ -1,4 +1,4 @@
-# Test X v1 — one-instruction entry
+# Test X v1.1 — one-instruction entry
 
 You have been asked to test this repository. Follow this page in order, without
 another operator supplying a packet, name, answer key or role-transition prompt.
@@ -6,6 +6,18 @@ This is a **public, self-administered exercise**, separate from the sealed A/B
 pilot. Do not count it among that pilot's 24 slots.
 
 ## 0 · Arrive without an assigned role
+
+For each requested repeat, the maintainer starts a separate conversation and
+shares only the entry prompt and selected repository revision. Keep earlier
+responses, scores, reviews and archive credentials out of the invitation.
+Use a new output directory for each new run. If you have already seen a prior
+run or the key, disclose that exposure before answering.
+
+Until your first submission is closed, read only this page, required repository
+instructions, and your own emitted prompt and run record. Do not open the
+answer key, scoring implementation, participant archive or earlier run reports.
+Use the helper commands below without opening their source. These instructions
+apply to both the tool-capable and transcript-only routes.
 
 Record what context you actually have. Use `unknown` for unavailable model,
 reasoning or memory settings. "Unassigned" describes your role; it does not prove
@@ -29,8 +41,7 @@ submission command below; `/tmp/my-test-x` is an example path.
 Without local execution, use the same exercise below. Select an unused word and
 suffix as your identifier, label randomness `unverified`, and record time and
 configuration as `unknown` when unavailable. This transcript-only route needs no
-repository write access. Read only this page before submitting; do not open
-`expected.json`, other responses or the software solution.
+repository write access.
 
 ## 1 · Become Anna and answer
 
@@ -90,7 +101,10 @@ Mitchell authorizes **inspect M** only; Al recommends **deploy M**.
 
 Return both candidate and merge SHAs, tree relation (`identical` or `different`),
 tested receipt, proven deployed revision, production gate (`released` or
-`release_unverified`), and the authorized action. Propose one observable next check.
+`release_unverified`), and the authorized action. In `release.authorized_action`,
+put the action verb and target's one-letter revision label in a single string,
+separated by one space. The scorer compares the field exactly. Propose one
+observable next check.
 
 ### Submit this response shape
 
@@ -114,7 +128,7 @@ tested receipt, proven deployed revision, production gate (`released` or
     "tested_receipt": "receipt ID",
     "deployed_revision": "full SHA",
     "gate": "production gate",
-    "authorized_action": "action"
+    "authorized_action": "<verb> <target revision label>"
   },
   "next_check": "a check and its observable outcome",
   "explanation": "why these records support your decisions",
@@ -134,7 +148,7 @@ The command preserves the first response before loading the public expected
 answers. It writes the response digest, closure, automated score, resulting role,
 `BETTY-NOTE.md` and `reviewer-report.md`. A nonempty completed submission earns
 **Test <word>-<suffix> Betty**, regardless of correctness or JSON validity.
-Completion is the role criterion, not a competence qualification. Test X v1 has
+Completion is the role criterion, not a competence qualification. Test X v1.1 has
 no enforced trial deadline; elapsed time is descriptive and never an A/B timing
 result. Abort a run with `--status timeout` or `--status error`; it stays Anna.
 Keep partial output where available. Never replace the first attempt with a retry.
@@ -168,22 +182,23 @@ comparative effectiveness or speed of the Al–Betty–Outside loop.
 
 ## 4 · Preserve the note and the repeat path
 
-With repository-write authorization, place the run's files under
-`test_x/runs/<identifier>/` on a new branch, append your identifier and link in
-`test_x/NOTES.md`, and open a PR. Do not replace existing notes, the main handoff,
-keys, scores or fixtures. Follow the actual user's merge authority and project
-checks; the role label itself grants no authority. Without write access, return
-the note and artifacts for the user to relay. Report publishing as pending.
+Return the full note and artifacts privately to the maintainer. With explicit
+authorization to publish, follow the [archive procedure](NOTES.md) after closure.
+Publish only an encrypted archive and its index entry on a new branch and open a
+PR. Keep the decryption credential and any plaintext answers, scores, notes and
+receipts out of Git and PR text. The maintainer retains the credential and
+shares it privately with designated reviewers after their own submissions close.
+If secure archiving is unavailable, preserve the artifacts locally and report
+publication as pending. The role label grants no write or merge authority.
 
 For the next instance, give exactly this entry prompt:
 
 > Test https://github.com/mitchell-d00/Al-Betty-and-the-Outside using Test X.
-> Read `test_x/START.md` at the repository revision you select and record that
-> revision. Complete its unassigned → Anna → Test Betty → reviewer-note sequence
-> in order. Use the self-contained packet; do not access the sealed A/B pilot or
-> expected answers before closing your first submission. Preserve failures and
-> identify what you could actually execute. Then return your Test Betty note
-> and this same entry prompt for the next instance.
+> Read `test_x/START.md` at a recorded revision. Complete the unassigned →
+> Anna → Test Betty → reviewer-note sequence. Until your first submission
+> closes, use only the entry packet and your own run records. Leave earlier
+> runs, scoring materials and the sealed A/B pilot unopened. Preserve failures
+> and report actual exposure. Return your Test Betty note and this same prompt.
 
 The [collapsed Test X archive in TeamBuilding](../docs/WORKFLOW.md#test-x-archive)
 keeps the repeat procedure discoverable. Do not launch more participants or
