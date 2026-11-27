@@ -31,3 +31,15 @@ The comparison adapts the failure reported by [MPLPB PR #101](https://github.com
 A takes the first available record and treats any direction as permission. B uses the exact-head report first, then the exact-head handoff if needed. A release requires a deployment receipt at the modeled revision. Authority requires the maintainer’s direction for the requested action and revision, with a recoverable current record. Authorization to replay or inspect can coexist with an open release gate. The scorer compares the record selected, gate, evidence ID, blockers, and authority. B must recover all five fields on every case with zero false authorizations and zero false releases.
 
 The named release, hold, failure, and unexecuted states are modeled. Receipt IDs, role labels, and revisions are synthetic fixture fields. The replay performs no repository changes or verification of live identities, permissions, receipts, deployment, or the timing of decisions.
+
+## E03 · Recover the tested source from PR #5
+
+Run `python -B experiments/recover_pr5.py` from a checkout with Git history.
+The [frozen cases and sealed PR report](pr5-recovery/SHA256SUMS) exercise the
+actual tested head and merge as well as synthetic negative and positive controls.
+The runner reads tree and parent IDs from Git. It credits the tested source as
+merged only when the report matches the tested head, that head is a parent of
+the merge, and their trees match. Deployment and authority use separate
+records pinned to the target revision. Synthetic receipts establish expected
+decisions in the replay. PR #5's archive links establish GitHub publication of
+repository artifacts.

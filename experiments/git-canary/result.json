@@ -1,0 +1,1221 @@
+{
+  "baseline": "9fd14821babbb20b61f8c84c7b7e6fb2590d8b68",
+  "fixture_sha256": "121832011efe5a2b99dee7efee172efcb49f0b84c92df9ea115b3888ea9bc853",
+  "reservation_lifetime": "One host instance, from admission until that disposable case ends; retained after either Git success or Git failure.",
+  "passed": 6,
+  "total": 6,
+  "cases": [
+    {
+      "id": "C01-allowed",
+      "expected": {
+        "preview": "allowed",
+        "execution": [
+          "allowed"
+        ],
+        "writer_calls": 1,
+        "git_status": [
+          "success"
+        ],
+        "after": [
+          "intended"
+        ],
+        "events": [
+          "ready",
+          "preview",
+          "recheck",
+          "reserved",
+          "writer",
+          "readback"
+        ]
+      },
+      "events": [
+        {
+          "sequence": 1,
+          "event": "ready",
+          "readback": {
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "markers": {
+              "initial.txt": "initial marker\n"
+            },
+            "parents": [],
+            "changes_from_initial": []
+          }
+        },
+        {
+          "sequence": 2,
+          "event": "preview",
+          "request": {
+            "action": "write-canary",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+          },
+          "grant": {
+            "issuer": "Mitchell",
+            "action": "write-canary",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "active": true
+          },
+          "receipt": {
+            "id": "canary-ready",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "status": "passed"
+          },
+          "ref_at_check": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+          "verdict": "allowed"
+        },
+        {
+          "sequence": 3,
+          "event": "recheck",
+          "request": {
+            "action": "write-canary",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+          },
+          "grant": {
+            "issuer": "Mitchell",
+            "action": "write-canary",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "active": true
+          },
+          "receipt": {
+            "id": "canary-ready",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "status": "passed"
+          },
+          "ref_at_check": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+          "verdict": "allowed"
+        },
+        {
+          "sequence": 4,
+          "event": "reserved",
+          "request": {
+            "action": "write-canary",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+          }
+        },
+        {
+          "sequence": 5,
+          "event": "writer",
+          "git": {
+            "args": [
+              "update-ref",
+              "refs/heads/boa-canary",
+              "7688a9b96576906148de7af9ab545913190d5b3d",
+              "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+            ],
+            "exit": 0,
+            "stdout": "",
+            "stderr": ""
+          }
+        },
+        {
+          "sequence": 6,
+          "event": "readback",
+          "attempt": 1,
+          "readback": {
+            "revision": "7688a9b96576906148de7af9ab545913190d5b3d",
+            "markers": {
+              "canary.txt": "intended canary\n",
+              "initial.txt": "initial marker\n"
+            },
+            "parents": [
+              "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+            ],
+            "changes_from_initial": [
+              "A\tcanary.txt"
+            ]
+          }
+        }
+      ],
+      "commits": {
+        "initial": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+        "intended": "7688a9b96576906148de7af9ab545913190d5b3d",
+        "competing": "4782bb0095ad8375a7b39d0f2b1c7739bd3b0d77"
+      },
+      "before": {
+        "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+        "markers": {
+          "initial.txt": "initial marker\n"
+        },
+        "parents": [],
+        "changes_from_initial": []
+      },
+      "preview": "allowed",
+      "attempts": [
+        {
+          "verdict": "allowed",
+          "git": {
+            "args": [
+              "update-ref",
+              "refs/heads/boa-canary",
+              "7688a9b96576906148de7af9ab545913190d5b3d",
+              "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+            ],
+            "exit": 0,
+            "stdout": "",
+            "stderr": ""
+          },
+          "after": {
+            "revision": "7688a9b96576906148de7af9ab545913190d5b3d",
+            "markers": {
+              "canary.txt": "intended canary\n",
+              "initial.txt": "initial marker\n"
+            },
+            "parents": [
+              "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+            ],
+            "changes_from_initial": [
+              "A\tcanary.txt"
+            ]
+          }
+        }
+      ],
+      "observed": {
+        "preview": "allowed",
+        "execution": [
+          "allowed"
+        ],
+        "writer_calls": 1,
+        "git_status": [
+          "success"
+        ],
+        "after": [
+          "intended"
+        ],
+        "events": [
+          "ready",
+          "preview",
+          "recheck",
+          "reserved",
+          "writer",
+          "readback"
+        ]
+      },
+      "git_readbacks_match": true,
+      "status": "passed"
+    },
+    {
+      "id": "C02-advice-only",
+      "expected": {
+        "preview": "no_current_grant",
+        "execution": [
+          "no_current_grant"
+        ],
+        "writer_calls": 0,
+        "git_status": [
+          null
+        ],
+        "after": [
+          "initial"
+        ],
+        "events": [
+          "ready",
+          "preview",
+          "recheck",
+          "readback"
+        ]
+      },
+      "events": [
+        {
+          "sequence": 1,
+          "event": "ready",
+          "readback": {
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "markers": {
+              "initial.txt": "initial marker\n"
+            },
+            "parents": [],
+            "changes_from_initial": []
+          }
+        },
+        {
+          "sequence": 2,
+          "event": "preview",
+          "request": {
+            "action": "write-canary",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+          },
+          "grant": {
+            "issuer": "Al",
+            "action": "write-canary",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "active": true
+          },
+          "receipt": {
+            "id": "canary-ready",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "status": "passed"
+          },
+          "ref_at_check": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+          "verdict": "no_current_grant"
+        },
+        {
+          "sequence": 3,
+          "event": "recheck",
+          "request": {
+            "action": "write-canary",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+          },
+          "grant": {
+            "issuer": "Al",
+            "action": "write-canary",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "active": true
+          },
+          "receipt": {
+            "id": "canary-ready",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "status": "passed"
+          },
+          "ref_at_check": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+          "verdict": "no_current_grant"
+        },
+        {
+          "sequence": 4,
+          "event": "readback",
+          "attempt": 1,
+          "readback": {
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "markers": {
+              "initial.txt": "initial marker\n"
+            },
+            "parents": [],
+            "changes_from_initial": []
+          }
+        }
+      ],
+      "commits": {
+        "initial": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+        "intended": "7688a9b96576906148de7af9ab545913190d5b3d",
+        "competing": "4782bb0095ad8375a7b39d0f2b1c7739bd3b0d77"
+      },
+      "before": {
+        "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+        "markers": {
+          "initial.txt": "initial marker\n"
+        },
+        "parents": [],
+        "changes_from_initial": []
+      },
+      "preview": "no_current_grant",
+      "attempts": [
+        {
+          "verdict": "no_current_grant",
+          "git": null,
+          "after": {
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "markers": {
+              "initial.txt": "initial marker\n"
+            },
+            "parents": [],
+            "changes_from_initial": []
+          }
+        }
+      ],
+      "observed": {
+        "preview": "no_current_grant",
+        "execution": [
+          "no_current_grant"
+        ],
+        "writer_calls": 0,
+        "git_status": [
+          null
+        ],
+        "after": [
+          "initial"
+        ],
+        "events": [
+          "ready",
+          "preview",
+          "recheck",
+          "readback"
+        ]
+      },
+      "git_readbacks_match": true,
+      "status": "passed"
+    },
+    {
+      "id": "C03-revoked-after-preview",
+      "expected": {
+        "preview": "allowed",
+        "execution": [
+          "no_current_grant"
+        ],
+        "writer_calls": 0,
+        "git_status": [
+          null
+        ],
+        "after": [
+          "initial"
+        ],
+        "events": [
+          "ready",
+          "preview",
+          "revocation",
+          "recheck",
+          "readback"
+        ]
+      },
+      "events": [
+        {
+          "sequence": 1,
+          "event": "ready",
+          "readback": {
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "markers": {
+              "initial.txt": "initial marker\n"
+            },
+            "parents": [],
+            "changes_from_initial": []
+          }
+        },
+        {
+          "sequence": 2,
+          "event": "preview",
+          "request": {
+            "action": "write-canary",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+          },
+          "grant": {
+            "issuer": "Mitchell",
+            "action": "write-canary",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "active": true
+          },
+          "receipt": {
+            "id": "canary-ready",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "status": "passed"
+          },
+          "ref_at_check": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+          "verdict": "allowed"
+        },
+        {
+          "sequence": 3,
+          "event": "revocation",
+          "grant": {
+            "issuer": "Mitchell",
+            "action": "write-canary",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "active": false
+          }
+        },
+        {
+          "sequence": 4,
+          "event": "recheck",
+          "request": {
+            "action": "write-canary",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+          },
+          "grant": {
+            "issuer": "Mitchell",
+            "action": "write-canary",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "active": false
+          },
+          "receipt": {
+            "id": "canary-ready",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "status": "passed"
+          },
+          "ref_at_check": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+          "verdict": "no_current_grant"
+        },
+        {
+          "sequence": 5,
+          "event": "readback",
+          "attempt": 1,
+          "readback": {
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "markers": {
+              "initial.txt": "initial marker\n"
+            },
+            "parents": [],
+            "changes_from_initial": []
+          }
+        }
+      ],
+      "commits": {
+        "initial": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+        "intended": "7688a9b96576906148de7af9ab545913190d5b3d",
+        "competing": "4782bb0095ad8375a7b39d0f2b1c7739bd3b0d77"
+      },
+      "before": {
+        "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+        "markers": {
+          "initial.txt": "initial marker\n"
+        },
+        "parents": [],
+        "changes_from_initial": []
+      },
+      "preview": "allowed",
+      "attempts": [
+        {
+          "verdict": "no_current_grant",
+          "git": null,
+          "after": {
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "markers": {
+              "initial.txt": "initial marker\n"
+            },
+            "parents": [],
+            "changes_from_initial": []
+          }
+        }
+      ],
+      "observed": {
+        "preview": "allowed",
+        "execution": [
+          "no_current_grant"
+        ],
+        "writer_calls": 0,
+        "git_status": [
+          null
+        ],
+        "after": [
+          "initial"
+        ],
+        "events": [
+          "ready",
+          "preview",
+          "revocation",
+          "recheck",
+          "readback"
+        ]
+      },
+      "git_readbacks_match": true,
+      "status": "passed"
+    },
+    {
+      "id": "C04-competing-writer",
+      "expected": {
+        "preview": "allowed",
+        "execution": [
+          "allowed"
+        ],
+        "writer_calls": 1,
+        "git_status": [
+          "failure"
+        ],
+        "after": [
+          "competing"
+        ],
+        "events": [
+          "ready",
+          "preview",
+          "recheck",
+          "reserved",
+          "competing_update",
+          "writer",
+          "readback"
+        ]
+      },
+      "events": [
+        {
+          "sequence": 1,
+          "event": "ready",
+          "readback": {
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "markers": {
+              "initial.txt": "initial marker\n"
+            },
+            "parents": [],
+            "changes_from_initial": []
+          }
+        },
+        {
+          "sequence": 2,
+          "event": "preview",
+          "request": {
+            "action": "write-canary",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+          },
+          "grant": {
+            "issuer": "Mitchell",
+            "action": "write-canary",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "active": true
+          },
+          "receipt": {
+            "id": "canary-ready",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "status": "passed"
+          },
+          "ref_at_check": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+          "verdict": "allowed"
+        },
+        {
+          "sequence": 3,
+          "event": "recheck",
+          "request": {
+            "action": "write-canary",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+          },
+          "grant": {
+            "issuer": "Mitchell",
+            "action": "write-canary",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "active": true
+          },
+          "receipt": {
+            "id": "canary-ready",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "status": "passed"
+          },
+          "ref_at_check": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+          "verdict": "allowed"
+        },
+        {
+          "sequence": 4,
+          "event": "reserved",
+          "request": {
+            "action": "write-canary",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+          }
+        },
+        {
+          "sequence": 5,
+          "event": "competing_update",
+          "git": {
+            "args": [
+              "update-ref",
+              "refs/heads/boa-canary",
+              "4782bb0095ad8375a7b39d0f2b1c7739bd3b0d77",
+              "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+            ],
+            "exit": 0,
+            "stdout": "",
+            "stderr": ""
+          },
+          "readback": {
+            "revision": "4782bb0095ad8375a7b39d0f2b1c7739bd3b0d77",
+            "markers": {
+              "competing.txt": "competing marker\n",
+              "initial.txt": "initial marker\n"
+            },
+            "parents": [
+              "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+            ],
+            "changes_from_initial": [
+              "A\tcompeting.txt"
+            ]
+          }
+        },
+        {
+          "sequence": 6,
+          "event": "writer",
+          "git": {
+            "args": [
+              "update-ref",
+              "refs/heads/boa-canary",
+              "7688a9b96576906148de7af9ab545913190d5b3d",
+              "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+            ],
+            "exit": 128,
+            "stdout": "",
+            "stderr": "fatal: update_ref failed for ref 'refs/heads/boa-canary': cannot lock ref 'refs/heads/boa-canary': is at 4782bb0095ad8375a7b39d0f2b1c7739bd3b0d77 but expected e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0\n"
+          }
+        },
+        {
+          "sequence": 7,
+          "event": "readback",
+          "attempt": 1,
+          "readback": {
+            "revision": "4782bb0095ad8375a7b39d0f2b1c7739bd3b0d77",
+            "markers": {
+              "competing.txt": "competing marker\n",
+              "initial.txt": "initial marker\n"
+            },
+            "parents": [
+              "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+            ],
+            "changes_from_initial": [
+              "A\tcompeting.txt"
+            ]
+          }
+        }
+      ],
+      "commits": {
+        "initial": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+        "intended": "7688a9b96576906148de7af9ab545913190d5b3d",
+        "competing": "4782bb0095ad8375a7b39d0f2b1c7739bd3b0d77"
+      },
+      "before": {
+        "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+        "markers": {
+          "initial.txt": "initial marker\n"
+        },
+        "parents": [],
+        "changes_from_initial": []
+      },
+      "preview": "allowed",
+      "attempts": [
+        {
+          "verdict": "allowed",
+          "git": {
+            "args": [
+              "update-ref",
+              "refs/heads/boa-canary",
+              "7688a9b96576906148de7af9ab545913190d5b3d",
+              "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+            ],
+            "exit": 128,
+            "stdout": "",
+            "stderr": "fatal: update_ref failed for ref 'refs/heads/boa-canary': cannot lock ref 'refs/heads/boa-canary': is at 4782bb0095ad8375a7b39d0f2b1c7739bd3b0d77 but expected e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0\n"
+          },
+          "after": {
+            "revision": "4782bb0095ad8375a7b39d0f2b1c7739bd3b0d77",
+            "markers": {
+              "competing.txt": "competing marker\n",
+              "initial.txt": "initial marker\n"
+            },
+            "parents": [
+              "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+            ],
+            "changes_from_initial": [
+              "A\tcompeting.txt"
+            ]
+          }
+        }
+      ],
+      "observed": {
+        "preview": "allowed",
+        "execution": [
+          "allowed"
+        ],
+        "writer_calls": 1,
+        "git_status": [
+          "failure"
+        ],
+        "after": [
+          "competing"
+        ],
+        "events": [
+          "ready",
+          "preview",
+          "recheck",
+          "reserved",
+          "competing_update",
+          "writer",
+          "readback"
+        ]
+      },
+      "git_readbacks_match": true,
+      "expected_old_rejection": true,
+      "status": "passed"
+    },
+    {
+      "id": "C05-repeat-after-success",
+      "expected": {
+        "preview": "allowed",
+        "execution": [
+          "allowed",
+          "reserved_request"
+        ],
+        "writer_calls": 1,
+        "git_status": [
+          "success",
+          null
+        ],
+        "after": [
+          "intended",
+          "intended"
+        ],
+        "events": [
+          "ready",
+          "preview",
+          "recheck",
+          "reserved",
+          "writer",
+          "readback",
+          "repeat_denied",
+          "readback"
+        ]
+      },
+      "events": [
+        {
+          "sequence": 1,
+          "event": "ready",
+          "readback": {
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "markers": {
+              "initial.txt": "initial marker\n"
+            },
+            "parents": [],
+            "changes_from_initial": []
+          }
+        },
+        {
+          "sequence": 2,
+          "event": "preview",
+          "request": {
+            "action": "write-canary",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+          },
+          "grant": {
+            "issuer": "Mitchell",
+            "action": "write-canary",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "active": true
+          },
+          "receipt": {
+            "id": "canary-ready",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "status": "passed"
+          },
+          "ref_at_check": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+          "verdict": "allowed"
+        },
+        {
+          "sequence": 3,
+          "event": "recheck",
+          "request": {
+            "action": "write-canary",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+          },
+          "grant": {
+            "issuer": "Mitchell",
+            "action": "write-canary",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "active": true
+          },
+          "receipt": {
+            "id": "canary-ready",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "status": "passed"
+          },
+          "ref_at_check": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+          "verdict": "allowed"
+        },
+        {
+          "sequence": 4,
+          "event": "reserved",
+          "request": {
+            "action": "write-canary",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+          }
+        },
+        {
+          "sequence": 5,
+          "event": "writer",
+          "git": {
+            "args": [
+              "update-ref",
+              "refs/heads/boa-canary",
+              "7688a9b96576906148de7af9ab545913190d5b3d",
+              "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+            ],
+            "exit": 0,
+            "stdout": "",
+            "stderr": ""
+          }
+        },
+        {
+          "sequence": 6,
+          "event": "readback",
+          "attempt": 1,
+          "readback": {
+            "revision": "7688a9b96576906148de7af9ab545913190d5b3d",
+            "markers": {
+              "canary.txt": "intended canary\n",
+              "initial.txt": "initial marker\n"
+            },
+            "parents": [
+              "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+            ],
+            "changes_from_initial": [
+              "A\tcanary.txt"
+            ]
+          }
+        },
+        {
+          "sequence": 7,
+          "event": "repeat_denied",
+          "request": {
+            "action": "write-canary",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+          },
+          "original_writer_event": 5,
+          "original_git_exit": 0
+        },
+        {
+          "sequence": 8,
+          "event": "readback",
+          "attempt": 2,
+          "readback": {
+            "revision": "7688a9b96576906148de7af9ab545913190d5b3d",
+            "markers": {
+              "canary.txt": "intended canary\n",
+              "initial.txt": "initial marker\n"
+            },
+            "parents": [
+              "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+            ],
+            "changes_from_initial": [
+              "A\tcanary.txt"
+            ]
+          }
+        }
+      ],
+      "commits": {
+        "initial": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+        "intended": "7688a9b96576906148de7af9ab545913190d5b3d",
+        "competing": "4782bb0095ad8375a7b39d0f2b1c7739bd3b0d77"
+      },
+      "before": {
+        "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+        "markers": {
+          "initial.txt": "initial marker\n"
+        },
+        "parents": [],
+        "changes_from_initial": []
+      },
+      "preview": "allowed",
+      "attempts": [
+        {
+          "verdict": "allowed",
+          "git": {
+            "args": [
+              "update-ref",
+              "refs/heads/boa-canary",
+              "7688a9b96576906148de7af9ab545913190d5b3d",
+              "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+            ],
+            "exit": 0,
+            "stdout": "",
+            "stderr": ""
+          },
+          "after": {
+            "revision": "7688a9b96576906148de7af9ab545913190d5b3d",
+            "markers": {
+              "canary.txt": "intended canary\n",
+              "initial.txt": "initial marker\n"
+            },
+            "parents": [
+              "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+            ],
+            "changes_from_initial": [
+              "A\tcanary.txt"
+            ]
+          }
+        },
+        {
+          "verdict": "reserved_request",
+          "git": null,
+          "after": {
+            "revision": "7688a9b96576906148de7af9ab545913190d5b3d",
+            "markers": {
+              "canary.txt": "intended canary\n",
+              "initial.txt": "initial marker\n"
+            },
+            "parents": [
+              "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+            ],
+            "changes_from_initial": [
+              "A\tcanary.txt"
+            ]
+          }
+        }
+      ],
+      "observed": {
+        "preview": "allowed",
+        "execution": [
+          "allowed",
+          "reserved_request"
+        ],
+        "writer_calls": 1,
+        "git_status": [
+          "success",
+          null
+        ],
+        "after": [
+          "intended",
+          "intended"
+        ],
+        "events": [
+          "ready",
+          "preview",
+          "recheck",
+          "reserved",
+          "writer",
+          "readback",
+          "repeat_denied",
+          "readback"
+        ]
+      },
+      "git_readbacks_match": true,
+      "status": "passed"
+    },
+    {
+      "id": "C06-repeat-after-competition",
+      "expected": {
+        "preview": "allowed",
+        "execution": [
+          "allowed",
+          "reserved_request"
+        ],
+        "writer_calls": 1,
+        "git_status": [
+          "failure",
+          null
+        ],
+        "after": [
+          "competing",
+          "competing"
+        ],
+        "events": [
+          "ready",
+          "preview",
+          "recheck",
+          "reserved",
+          "competing_update",
+          "writer",
+          "readback",
+          "repeat_denied",
+          "readback"
+        ]
+      },
+      "events": [
+        {
+          "sequence": 1,
+          "event": "ready",
+          "readback": {
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "markers": {
+              "initial.txt": "initial marker\n"
+            },
+            "parents": [],
+            "changes_from_initial": []
+          }
+        },
+        {
+          "sequence": 2,
+          "event": "preview",
+          "request": {
+            "action": "write-canary",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+          },
+          "grant": {
+            "issuer": "Mitchell",
+            "action": "write-canary",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "active": true
+          },
+          "receipt": {
+            "id": "canary-ready",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "status": "passed"
+          },
+          "ref_at_check": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+          "verdict": "allowed"
+        },
+        {
+          "sequence": 3,
+          "event": "recheck",
+          "request": {
+            "action": "write-canary",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+          },
+          "grant": {
+            "issuer": "Mitchell",
+            "action": "write-canary",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "active": true
+          },
+          "receipt": {
+            "id": "canary-ready",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+            "status": "passed"
+          },
+          "ref_at_check": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+          "verdict": "allowed"
+        },
+        {
+          "sequence": 4,
+          "event": "reserved",
+          "request": {
+            "action": "write-canary",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+          }
+        },
+        {
+          "sequence": 5,
+          "event": "competing_update",
+          "git": {
+            "args": [
+              "update-ref",
+              "refs/heads/boa-canary",
+              "4782bb0095ad8375a7b39d0f2b1c7739bd3b0d77",
+              "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+            ],
+            "exit": 0,
+            "stdout": "",
+            "stderr": ""
+          },
+          "readback": {
+            "revision": "4782bb0095ad8375a7b39d0f2b1c7739bd3b0d77",
+            "markers": {
+              "competing.txt": "competing marker\n",
+              "initial.txt": "initial marker\n"
+            },
+            "parents": [
+              "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+            ],
+            "changes_from_initial": [
+              "A\tcompeting.txt"
+            ]
+          }
+        },
+        {
+          "sequence": 6,
+          "event": "writer",
+          "git": {
+            "args": [
+              "update-ref",
+              "refs/heads/boa-canary",
+              "7688a9b96576906148de7af9ab545913190d5b3d",
+              "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+            ],
+            "exit": 128,
+            "stdout": "",
+            "stderr": "fatal: update_ref failed for ref 'refs/heads/boa-canary': cannot lock ref 'refs/heads/boa-canary': is at 4782bb0095ad8375a7b39d0f2b1c7739bd3b0d77 but expected e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0\n"
+          }
+        },
+        {
+          "sequence": 7,
+          "event": "readback",
+          "attempt": 1,
+          "readback": {
+            "revision": "4782bb0095ad8375a7b39d0f2b1c7739bd3b0d77",
+            "markers": {
+              "competing.txt": "competing marker\n",
+              "initial.txt": "initial marker\n"
+            },
+            "parents": [
+              "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+            ],
+            "changes_from_initial": [
+              "A\tcompeting.txt"
+            ]
+          }
+        },
+        {
+          "sequence": 8,
+          "event": "repeat_denied",
+          "request": {
+            "action": "write-canary",
+            "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+          },
+          "original_writer_event": 6,
+          "original_git_exit": 128
+        },
+        {
+          "sequence": 9,
+          "event": "readback",
+          "attempt": 2,
+          "readback": {
+            "revision": "4782bb0095ad8375a7b39d0f2b1c7739bd3b0d77",
+            "markers": {
+              "competing.txt": "competing marker\n",
+              "initial.txt": "initial marker\n"
+            },
+            "parents": [
+              "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+            ],
+            "changes_from_initial": [
+              "A\tcompeting.txt"
+            ]
+          }
+        }
+      ],
+      "commits": {
+        "initial": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+        "intended": "7688a9b96576906148de7af9ab545913190d5b3d",
+        "competing": "4782bb0095ad8375a7b39d0f2b1c7739bd3b0d77"
+      },
+      "before": {
+        "revision": "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0",
+        "markers": {
+          "initial.txt": "initial marker\n"
+        },
+        "parents": [],
+        "changes_from_initial": []
+      },
+      "preview": "allowed",
+      "attempts": [
+        {
+          "verdict": "allowed",
+          "git": {
+            "args": [
+              "update-ref",
+              "refs/heads/boa-canary",
+              "7688a9b96576906148de7af9ab545913190d5b3d",
+              "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+            ],
+            "exit": 128,
+            "stdout": "",
+            "stderr": "fatal: update_ref failed for ref 'refs/heads/boa-canary': cannot lock ref 'refs/heads/boa-canary': is at 4782bb0095ad8375a7b39d0f2b1c7739bd3b0d77 but expected e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0\n"
+          },
+          "after": {
+            "revision": "4782bb0095ad8375a7b39d0f2b1c7739bd3b0d77",
+            "markers": {
+              "competing.txt": "competing marker\n",
+              "initial.txt": "initial marker\n"
+            },
+            "parents": [
+              "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+            ],
+            "changes_from_initial": [
+              "A\tcompeting.txt"
+            ]
+          }
+        },
+        {
+          "verdict": "reserved_request",
+          "git": null,
+          "after": {
+            "revision": "4782bb0095ad8375a7b39d0f2b1c7739bd3b0d77",
+            "markers": {
+              "competing.txt": "competing marker\n",
+              "initial.txt": "initial marker\n"
+            },
+            "parents": [
+              "e9ae5c81287341864c0ac5b3ae3f9fb7ea3f1df0"
+            ],
+            "changes_from_initial": [
+              "A\tcompeting.txt"
+            ]
+          }
+        }
+      ],
+      "observed": {
+        "preview": "allowed",
+        "execution": [
+          "allowed",
+          "reserved_request"
+        ],
+        "writer_calls": 1,
+        "git_status": [
+          "failure",
+          null
+        ],
+        "after": [
+          "competing",
+          "competing"
+        ],
+        "events": [
+          "ready",
+          "preview",
+          "recheck",
+          "reserved",
+          "competing_update",
+          "writer",
+          "readback",
+          "repeat_denied",
+          "readback"
+        ]
+      },
+      "git_readbacks_match": true,
+      "expected_old_rejection": true,
+      "status": "passed"
+    }
+  ]
+}

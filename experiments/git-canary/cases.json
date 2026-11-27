@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "baseline": "9fd14821babbb20b61f8c84c7b7e6fb2590d8b68",
+  "acceptance": "All expected verdicts, event order, writer counts, Git statuses, ref and marker readbacks must match. The intended commit must be the initial commit's direct child and add only canary.txt. Missing order or readback is inconclusive.",
+  "reservation_lifetime": "One host instance, from admission until that disposable case ends; retained after either Git success or Git failure.",
+  "cases": [
+    {
+      "id": "C01-allowed", "direction": "Mitchell", "interleave": "none", "repeat": false,
+      "expect": {"preview": "allowed", "execution": ["allowed"], "writer_calls": 1, "git_status": ["success"], "after": ["intended"], "events": ["ready", "preview", "recheck", "reserved", "writer", "readback"]}
+    },
+    {
+      "id": "C02-advice-only", "direction": "Al", "interleave": "none", "repeat": false,
+      "expect": {"preview": "no_current_grant", "execution": ["no_current_grant"], "writer_calls": 0, "git_status": [null], "after": ["initial"], "events": ["ready", "preview", "recheck", "readback"]}
+    },
+    {
+      "id": "C03-revoked-after-preview", "direction": "Mitchell", "interleave": "revoke", "repeat": false,
+      "expect": {"preview": "allowed", "execution": ["no_current_grant"], "writer_calls": 0, "git_status": [null], "after": ["initial"], "events": ["ready", "preview", "revocation", "recheck", "readback"]}
+    },
+    {
+      "id": "C04-competing-writer", "direction": "Mitchell", "interleave": "compete", "repeat": false,
+      "expect": {"preview": "allowed", "execution": ["allowed"], "writer_calls": 1, "git_status": ["failure"], "after": ["competing"], "events": ["ready", "preview", "recheck", "reserved", "competing_update", "writer", "readback"]}
+    },
+    {
+      "id": "C05-repeat-after-success", "direction": "Mitchell", "interleave": "none", "repeat": true,
+      "expect": {"preview": "allowed", "execution": ["allowed", "reserved_request"], "writer_calls": 1, "git_status": ["success", null], "after": ["intended", "intended"], "events": ["ready", "preview", "recheck", "reserved", "writer", "readback", "repeat_denied", "readback"]}
+    },
+    {
+      "id": "C06-repeat-after-competition", "direction": "Mitchell", "interleave": "compete", "repeat": true,
+      "expect": {"preview": "allowed", "execution": ["allowed", "reserved_request"], "writer_calls": 1, "git_status": ["failure", null], "after": ["competing", "competing"], "events": ["ready", "preview", "recheck", "reserved", "competing_update", "writer", "readback", "repeat_denied", "readback"]}
+    }
+  ]
+}

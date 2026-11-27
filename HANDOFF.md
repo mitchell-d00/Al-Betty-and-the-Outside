@@ -1,5 +1,108 @@
 # Repository handoff
 
+## Betty report for Al · Disposable Git effect
+
+Mitchell authorized local implementation and testing from
+`9fd14821babbb20b61f8c84c7b7e6fb2590d8b68`. The prior PR #5 9/9 replay receipt
+remains byte-identical. This cycle tests a real Git ref effect in disposable
+local repositories with fixture authorization. No publication was requested.
+
+The [six cases and their required event order](experiments/git-canary/cases.json)
+were sealed at `5dfe07b6d5a757901d2a1545e64c08e6de886dcb` before implementation.
+The final runner source is `8c0ebc41f608deab25659385d3b756adf29bc4c8`. The host owns
+the repository, ref, intended commit and Git execution. A proposal contains
+only action and target revision. The host rechecks exact action, revision,
+active Mitchell direction and the required readiness receipt before dispatch.
+The argument order is `git -C "$repo" update-ref refs/heads/boa-canary "$intended" "$initial"`.
+
+| Case | Preview | Betty writer calls | Git exit | Independent result |
+| --- | --- | ---: | ---: | --- |
+| Allowed | Allowed | 1 | 0 | Intended direct child, only `canary.txt` added |
+| Al advice only | Denied | 0 | Not run | Initial ref and marker |
+| Revoked after preview | Allowed | 0 | Not run | Initial ref and marker |
+| Competing writer | Allowed | 1 | 128 | Competing ref and marker |
+| Repeat after success | Allowed | 1 + 0 | 0, not run | Intended ref and marker retained |
+| Repeat after competition | Allowed | 1 + 0 | 128, not run | Competing ref and marker retained |
+
+The [raw receipt](experiments/git-canary/result.json) preserves request, grant,
+receipt, independent ref, markers, parent, diff and Git output. Git named the
+competing and expected commits in both stale write errors. The competing update
+happened after Betty's execution recheck. Repeat denial preserves the first
+ticket's writer event and exit status. Reservations are in memory for the
+lifetime of each disposable host, including after Git failure.
+
+The first exact-checkout run passed all six. A hardening pass cleared inherited
+Git environment overrides, required the exact receipt ID and checked Git's
+expected-old failure text. The six cases then passed again, and a run with
+invalid inherited Git paths produced the same receipt. PR #5's 9/9 result
+reproduced byte for byte, both original replay arms matched their published
+receipts, Test X lifecycle passed 6/6 and the baseline diff check passed.
+Raw outputs and statuses are in the local sibling directory
+`boa-git-canary-receipts`.
+
+Betty authored, ran and scored the cases in this existing BOA conversation.
+The result covers a single-process fixture and targeted competing-writer
+interleaving. It does not establish durable reservation, external identity,
+deployment or enforcement across other write paths. The changes and evidence
+remain local. See [the reproduction command](experiments/git-canary/README.md).
+
+**Question for Al:** Do the recheck, competing-ref readback, writer stderr and
+final readback prove that the stale update was rejected by Git's expected-old
+guard, while the repeat was stopped by the host before it reached Git?
+
+## Betty report for Al · PR #5 recovery development cycle
+
+Mitchell authorized local implementation and tests only. There were no open PRs
+at recovery. The baseline was default-branch head
+`1f1fec3d61f9481ab1a85162ec35289dc1bd6e5d`.
+[PR #5](https://github.com/mitchell-d00/Al-Betty-and-the-Outside/pull/5) was the
+latest merged PR. Its report and actual tested head both resolved to
+`4e605e46670e6056e1f79e29f7329496ac1de340`.
+The [historical CI run](https://github.com/mitchell-d00/Al-Betty-and-the-Outside/actions/runs/46011645328)
+passed at that tested head. GitHub reported zero changed files at the merge.
+Local Git confirmed that the tested head is a parent of the merge and both have
+tree `b601b9a9d49b56734eb634e6f8ec32f130ee251d`. This credits the tested source on
+main. GitHub publication of the paper archives is recorded in PR #5. A separate
+deployment receipt at the merge remains unverified.
+
+The sealed [cases and report](experiments/pr5-recovery/SHA256SUMS) were committed
+at `f7aa9a54856f92c13b65b00be99b57807ee2f181` before implementation or replay.
+The tested source commit is `7f10477d841e4df8fc04b4b43f2191fda145799e`.
+The runner reads parent and tree IDs from Git and reuses the report-pin parser.
+CI requests full history to make the historical commits available. All four
+decisions must match in all nine cases. A false-current, false-release, or
+false-authorization outcome fails the replay. Deployment and next-action
+authority each require their own exact-target record.
+
+- The first run passed **9/9** with **0/1 false-current, 0/5 false-release, and
+  0/7 false-authorization** opportunities. [Raw per-case output](experiments/pr5-recovery/result.json)
+  has SHA-256 `572d82636bb50990e16c04d0548ca260b2fc668cb90fdf9a92eb36ed0bcbf613`.
+- Both original arms matched every field of their published receipts. Test X
+  lifecycle passed **6/6** and **35/35 available public** pilot files matched
+  their seals. Two held entries were absent from the checkout. Held custody
+  remains unverified. Working-tree and baseline-to-candidate whitespace checks
+  passed.
+- The first shell read failed at the proxy and a direct DNS diagnostic also
+  failed. The approved read-only proxy retry and isolated clone succeeded.
+  An initial connector look for `.github/workflows/ci.yml` returned 404. The
+  checked-out workflow is `.github/workflows/checks.yml`. These were setup
+  failures. All first-attempt verification commands at the source pin exited 0.
+  Raw outputs and exit statuses are in the local sibling workspace directory
+  `boa-betty-pr5-receipts`.
+- This GPT-6-based Codex conversation had prior BOA, Test X, handoff dry-run and
+  B-Tests context. Exact model variant and reasoning setting are unknown. Betty
+  authored, ran, and scored the public development cases in this conversation.
+  No held keys or decrypted submissions were read. No Anna participant run,
+  sealed A/B slot, or new hosted CI run was launched. No effectiveness or
+  false-acceptance estimate follows from this replay.
+
+The source and this evidence are local commits. Mitchell retains the decision
+on any push, PR, merge, deployment, or archive publication.
+
+**Question for Al:** Does the output distinguish a verified same-tree merge
+from a release or permission claim clearly enough when the only deployment
+receipt is pinned to the tested parent of the merge?
+
 ## Current paper and archive reconciliation · 27 November 2026
 
 Mitchell asked the existing Betty implementation session to compare the supplied
