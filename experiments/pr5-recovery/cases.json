@@ -1,0 +1,147 @@
+{
+  "version": 1,
+  "source_pr": "https://github.com/mitchell-d00/Al-Betty-and-the-Outside/pull/5",
+  "tested_head": "4e605e46670e6056e1f79e29f7329496ac1de340",
+  "target": "1f1fec3d61f9481ab1a85162ec35289dc1bd6e5d",
+  "requested_action": "inspect",
+  "expected_source_tree": "b601b9a9d49b56734eb634e6f8ec32f130ee251d",
+  "acceptance": "All four fields must match in all nine cases. Any false-current, false-release, or false-authorization decision fails the replay.",
+  "cases": [
+    {
+      "id": "M01-live-pr5-transition",
+      "expected": {
+        "report_pin": "current",
+        "tested_source_reached_main": true,
+        "deployment_verified": false,
+        "action_authorized": false
+      }
+    },
+    {
+      "id": "M02-all-current-positive",
+      "deployment": {
+        "revision": "1f1fec3d61f9481ab1a85162ec35289dc1bd6e5d",
+        "status": "deployed",
+        "evidence": "synthetic-deployment-receipt"
+      },
+      "direction": {
+        "revision": "1f1fec3d61f9481ab1a85162ec35289dc1bd6e5d",
+        "action": "inspect",
+        "source": "maintainer"
+      },
+      "expected": {
+        "report_pin": "current",
+        "tested_source_reached_main": true,
+        "deployment_verified": true,
+        "action_authorized": true
+      }
+    },
+    {
+      "id": "M03-stale-report-pin",
+      "report_pin": "ccb4a792e8c241afa1ccb606855368cde6f31895",
+      "expected": {
+        "report_pin": "stale",
+        "tested_source_reached_main": false,
+        "deployment_verified": false,
+        "action_authorized": false
+      }
+    },
+    {
+      "id": "M04-equal-trees-wrong-ancestry",
+      "tested_head": "1f1fec3d61f9481ab1a85162ec35289dc1bd6e5d",
+      "target": "4e605e46670e6056e1f79e29f7329496ac1de340",
+      "report_pin": "1f1fec3d61f9481ab1a85162ec35289dc1bd6e5d",
+      "expected": {
+        "report_pin": "current",
+        "tested_source_reached_main": false,
+        "deployment_verified": false,
+        "action_authorized": false
+      }
+    },
+    {
+      "id": "M05-different-tree",
+      "target": "ccb4a792e8c241afa1ccb606855368cde6f31895",
+      "expected": {
+        "report_pin": "current",
+        "tested_source_reached_main": false,
+        "deployment_verified": false,
+        "action_authorized": false
+      }
+    },
+    {
+      "id": "M06-tested-head-deployment-is-stale",
+      "deployment": {
+        "revision": "4e605e46670e6056e1f79e29f7329496ac1de340",
+        "status": "deployed",
+        "evidence": "synthetic-deployment-receipt"
+      },
+      "direction": {
+        "revision": "1f1fec3d61f9481ab1a85162ec35289dc1bd6e5d",
+        "action": "inspect",
+        "source": "maintainer"
+      },
+      "expected": {
+        "report_pin": "current",
+        "tested_source_reached_main": true,
+        "deployment_verified": false,
+        "action_authorized": true
+      }
+    },
+    {
+      "id": "M07-old-direction-current-deployment",
+      "deployment": {
+        "revision": "1f1fec3d61f9481ab1a85162ec35289dc1bd6e5d",
+        "status": "deployed",
+        "evidence": "synthetic-deployment-receipt"
+      },
+      "direction": {
+        "revision": "4e605e46670e6056e1f79e29f7329496ac1de340",
+        "action": "inspect",
+        "source": "maintainer"
+      },
+      "expected": {
+        "report_pin": "current",
+        "tested_source_reached_main": true,
+        "deployment_verified": true,
+        "action_authorized": false
+      }
+    },
+    {
+      "id": "M08-current-direction-wrong-action",
+      "deployment": {
+        "revision": "1f1fec3d61f9481ab1a85162ec35289dc1bd6e5d",
+        "status": "deployed",
+        "evidence": "synthetic-deployment-receipt"
+      },
+      "direction": {
+        "revision": "1f1fec3d61f9481ab1a85162ec35289dc1bd6e5d",
+        "action": "publish",
+        "source": "maintainer"
+      },
+      "expected": {
+        "report_pin": "current",
+        "tested_source_reached_main": true,
+        "deployment_verified": true,
+        "action_authorized": false
+      }
+    },
+    {
+      "id": "M09-al-advice-current-deployment",
+      "deployment": {
+        "revision": "1f1fec3d61f9481ab1a85162ec35289dc1bd6e5d",
+        "status": "deployed",
+        "evidence": "synthetic-deployment-receipt"
+      },
+      "direction": {
+        "revision": "1f1fec3d61f9481ab1a85162ec35289dc1bd6e5d",
+        "action": "inspect",
+        "source": "al"
+      },
+      "expected": {
+        "report_pin": "current",
+        "tested_source_reached_main": true,
+        "deployment_verified": true,
+        "action_authorized": false
+      }
+    }
+  ]
+}
