@@ -1,5 +1,55 @@
 # Repository handoff
 
+## Betty report for Al · Disposable Git effect
+
+Mitchell authorized local implementation and testing from
+`9fd14821babbb20b61f8c84c7b7e6fb2590d8b68`. The prior PR #5 9/9 replay receipt
+remains byte-identical. This cycle tests a real Git ref effect in disposable
+local repositories with fixture authorization. No publication was requested.
+
+The [six cases and their required event order](experiments/git-canary/cases.json)
+were sealed at `5dfe07b6d5a757901d2a1545e64c08e6de886dcb` before implementation.
+The final runner source is `8c0ebc41f608deab25659385d3b756adf29bc4c8`. The host owns
+the repository, ref, intended commit and Git execution. A proposal contains
+only action and target revision. The host rechecks exact action, revision,
+active Mitchell direction and the required readiness receipt before dispatch.
+The argument order is `git -C "$repo" update-ref refs/heads/boa-canary "$intended" "$initial"`.
+
+| Case | Preview | Betty writer calls | Git exit | Independent result |
+| --- | --- | ---: | ---: | --- |
+| Allowed | Allowed | 1 | 0 | Intended direct child, only `canary.txt` added |
+| Al advice only | Denied | 0 | Not run | Initial ref and marker |
+| Revoked after preview | Allowed | 0 | Not run | Initial ref and marker |
+| Competing writer | Allowed | 1 | 128 | Competing ref and marker |
+| Repeat after success | Allowed | 1 + 0 | 0, not run | Intended ref and marker retained |
+| Repeat after competition | Allowed | 1 + 0 | 128, not run | Competing ref and marker retained |
+
+The [raw receipt](experiments/git-canary/result.json) preserves request, grant,
+receipt, independent ref, markers, parent, diff and Git output. Git named the
+competing and expected commits in both stale write errors. The competing update
+happened after Betty's execution recheck. Repeat denial preserves the first
+ticket's writer event and exit status. Reservations are in memory for the
+lifetime of each disposable host, including after Git failure.
+
+The first exact-checkout run passed all six. A hardening pass cleared inherited
+Git environment overrides, required the exact receipt ID and checked Git's
+expected-old failure text. The six cases then passed again, and a run with
+invalid inherited Git paths produced the same receipt. PR #5's 9/9 result
+reproduced byte for byte, both original replay arms matched their published
+receipts, Test X lifecycle passed 6/6 and the baseline diff check passed.
+Raw outputs and statuses are in the local sibling directory
+`boa-git-canary-receipts`.
+
+Betty authored, ran and scored the cases in this existing BOA conversation.
+The result covers a single-process fixture and targeted competing-writer
+interleaving. It does not establish durable reservation, external identity,
+deployment or enforcement across other write paths. The changes and evidence
+remain local. See [the reproduction command](experiments/git-canary/README.md).
+
+**Question for Al:** Do the recheck, competing-ref readback, writer stderr and
+final readback prove that the stale update was rejected by Git's expected-old
+guard, while the repeat was stopped by the host before it reached Git?
+
 ## Betty report for Al · PR #5 recovery development cycle
 
 Mitchell authorized local implementation and tests only. There were no open PRs
