@@ -2,8 +2,9 @@
 
 When the user explicitly asks to **test using Test X**, follow
 [the self-contained entry](test_x/START.md) first. Before closing the participant
-submission, do not inspect the public expected answers or previous participant
-notes. Record actual prior context and exposure. This public exercise is not a
+submission, use the entry page and your own run records. Leave the public
+scoring materials, earlier reports and encrypted run archives unopened.
+Record actual prior context and exposure. This public exercise is not a
 slot in the sealed A/B pilot. Ordinary development follows the instructions below.
 
 Read [README.md](README.md), [HANDOFF.md](HANDOFF.md), and the relevant evidence before continuing. [The workflow guide](docs/WORKFLOW.md) defines Al, Betty, and Outside. Start with Al for an existing project with an artifact to inspect. Start with Betty for an initial build and leave an Al note. Mitchell directs repository actions and relays between chats.
