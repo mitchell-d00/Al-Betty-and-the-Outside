@@ -6,7 +6,8 @@ with designated reviewers after their own submissions close.
 
 | Run identifier | Protocol | Tested revision | Encrypted record |
 | --- | --- | --- | --- |
-| Test-Willow-27e9a4197734 | `test-x-v1` | `3adc687fdf2269749bbc0787dac96b34fb1499ca` | [Encrypted archive](runs/Test-Willow-27e9a4197734/record.zip.asc) |
+| Test-Willow-27e9a4197734 | `test-x-v1` | `3adc687fdf2269749bbc0787dac96b34fb1499ca` | [Original encrypted archive](runs/Test-Willow-27e9a4197734/record.zip.asc) · [Separately supplied audit copy](runs/Test-Willow-27e9a4197734/audited-supplied-record.zip.asc) |
+| Test-Orchid-80b6b8c0c370 | `test-x-v1.1` | `e2886fbadd1def33900408404910f81c97018a32` | [Encrypted archive](runs/Test-Orchid-80b6b8c0c370/record.zip.asc) |
 
 ## After closure
 

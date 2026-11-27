@@ -1,7 +1,11 @@
 # TeamBuilding Governance Prompt
 **Mitchell D McPhetridge**
 
-Paste this prompt into each of three separate chats. Start Betty first, then open Al in a separate chat. Open Outside whenever you want a sounding board. The chats may use different models.
+*Current operating prompt · revised 27 November 2026*
+
+Choose the entry path for the project. For an existing repository with an artifact to inspect, start **Al first**: inspect the current state and propose a bounded assignment for Betty. For a new project whose initial artifact remains to be built, start **Betty first**: build under the maintainer's direction and leave an Al note. Both paths then use separate Al and Betty chats. Open Outside whenever you want a sounding board. The chats may use different models.
+
+The original 25 November methods paper and its Betty-first appendix are preserved unchanged in [the paper archive](archive/Al-Betty-and-the-Outside-2026-11-25.pdf). This current prompt makes both entry paths explicit.
 
 ## Select one step
 

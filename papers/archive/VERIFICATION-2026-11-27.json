@@ -1,0 +1,197 @@
+{
+  "scope": "Paper, supplied-byte and score audit; no new participant trials or independent/blinded participant adjudication",
+  "date": "2026-11-27",
+  "protocol_source_pin": "e2886fbadd1def33900408404910f81c97018a32",
+  "original_paper_source_pin": "cd24b57b688668f06817196f883d7230b954ffd3",
+  "checks": [
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "experiments/run.py",
+        "--output",
+        "/workspace/betty-audit-20261127/final-original-replays.json"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "test_x",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_complete_preserves_raw_and_scores_then_transitions (test_run.TestLifecycle.test_complete_preserves_raw_and_scores_then_transitions) ... ok\ntest_duplicate_start_and_submit_cannot_replace_first_attempt (test_run.TestLifecycle.test_duplicate_start_and_submit_cannot_replace_first_attempt) ... ok\ntest_empty_response_is_not_completion (test_run.TestLifecycle.test_empty_response_is_not_completion) ... ok\ntest_failed_or_timed_out_attempt_stays_anna_and_retains_partial (test_run.TestLifecycle.test_failed_or_timed_out_attempt_stays_anna_and_retains_partial) ... ok\ntest_incorrect_and_malformed_submissions_still_earn_completion_role (test_run.TestLifecycle.test_incorrect_and_malformed_submissions_still_earn_completion_role) ... ok\ntest_modified_prompt_or_protocol_is_rejected_before_closure (test_run.TestLifecycle.test_modified_prompt_or_protocol_is_rejected_before_closure) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.792s\n\nOK\n"
+    },
+    {
+      "command": [
+        "sha256sum",
+        "-c",
+        "SHA256SUMS",
+        "--ignore-missing"
+      ],
+      "cwd": "pilot",
+      "exit_code": 0,
+      "stdout": "README.md: OK\nRUBRIC.md: OK\nparticipant-instructions.txt: OK\nruntime.json: OK\nstatus.json: OK\nattempt-template.json: OK\nprompts/15cd647eb96f.md: OK\nprompts/237d3fee65b6.md: OK\nprompts/2625c4a1eb0a.md: OK\nprompts/3404885e275a.md: OK\nprompts/5183e0b00651.md: OK\nprompts/51cf9a5a4062.md: OK\nprompts/5499aa158e1e.md: OK\nprompts/5c7fdd02efed.md: OK\nprompts/617c355887ec.md: OK\nprompts/6e949a87d222.md: OK\nprompts/7078330efc50.md: OK\nprompts/9cf40e7be84b.md: OK\nprompts/a791d9c94429.md: OK\nprompts/a7ddd0196b24.md: OK\nprompts/adc443bcb4cb.md: OK\nprompts/b835457fc39b.md: OK\nprompts/c117d1920a0f.md: OK\nprompts/c38cdb60b9e1.md: OK\nprompts/c3f4d9bc1b7f.md: OK\nprompts/db7674303b71.md: OK\nprompts/e3f89a70dd80.md: OK\nprompts/ed047edd9e9b.md: OK\nprompts/f44c929ad9d6.md: OK\nprompts/fb160c69ea26.md: OK\nreplay/A.json: OK\nreplay/B.json: OK\nreplay/attempts.json: OK\nreplay/both.json: OK\nreplay/launcher-probe.log: OK\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "check": "original per-case receipts identical",
+      "passed": true
+    },
+    {
+      "check": "papers/archive/Empirical-Al-Betty-and-the-Outside-2026-11-27 PDF text and bounds",
+      "passed": true
+    },
+    {
+      "check": "papers/TeamBuilding-Governance-Prompt PDF text and bounds",
+      "passed": true
+    },
+    {
+      "check": "unchanged supplied repository ZIP and all member hashes",
+      "passed": true
+    },
+    {
+      "check": "original methods PDF unchanged",
+      "passed": true
+    },
+    {
+      "check": "v1.1 sealed material bytes unchanged",
+      "passed": true
+    },
+    {
+      "check": "original Willow ciphertext unchanged",
+      "passed": true
+    },
+    {
+      "check": "local Markdown file links",
+      "passed": true,
+      "broken_links": []
+    },
+    {
+      "check": "new archive credentials absent from candidate files",
+      "passed": true,
+      "matching_paths": []
+    },
+    {
+      "check": "willow original pinned score and record consistency",
+      "passed": true
+    },
+    {
+      "check": "orchid original pinned score and record consistency",
+      "passed": true
+    },
+    {
+      "check": "Test-Orchid-80b6b8c0c370 encrypted original round trip",
+      "passed": true
+    },
+    {
+      "check": "Test-Willow-27e9a4197734 encrypted original round trip",
+      "passed": true
+    }
+  ],
+  "pdfs": [
+    {
+      "file": "papers/archive/Empirical-Al-Betty-and-the-Outside-2026-11-27.pdf",
+      "pages": 5,
+      "sha256": "1cbe17e9a69f8029b6cbd5213296400889f99d5b878a0234ea04c430cbef22a3",
+      "missing_source_tokens": {},
+      "out_of_page_words": []
+    },
+    {
+      "file": "papers/TeamBuilding-Governance-Prompt.pdf",
+      "pages": 2,
+      "sha256": "c2f48b8e781ee5d684e25f5b502bfdaa2be2579dd8df59a52f0b0a0263589f06",
+      "missing_source_tokens": {},
+      "out_of_page_words": []
+    }
+  ],
+  "participant_readback": {
+    "willow": {
+      "checks": {
+        "response_hash": true,
+        "prompt_bytes": true,
+        "prompt_hash": true,
+        "manifest_hash": true,
+        "recomputed_score": true,
+        "version": true,
+        "revision": true,
+        "elapsed_consistency": true
+      },
+      "correct": 15,
+      "total": 16,
+      "elapsed_local_seconds": 13.074382,
+      "passed": true
+    },
+    "orchid": {
+      "checks": {
+        "response_hash": true,
+        "duplicate_answer_bytes": true,
+        "prompt_bytes": true,
+        "prompt_hash": true,
+        "manifest_hash": true,
+        "manifest_members": true,
+        "source_pin": true,
+        "protocol": true,
+        "recomputed_score": true,
+        "elapsed_consistency": true,
+        "closure_role": true,
+        "publication_at_closure": true
+      },
+      "correct": 16,
+      "total": 16,
+      "elapsed_local_seconds": 11.310575,
+      "passed": true
+    }
+  },
+  "encrypted_archives": [
+    {
+      "participant": "Test-Orchid-80b6b8c0c370",
+      "plaintext_zip_sha256": "9e49db57e668deecb3a9629d49921eeea6a7d7ce8a9f00fe636319b29c535a3a",
+      "ciphertext_sha256": "2a993965fe2a6576e1afa4bdad812e6f5ac89cc90abc84f8123b8ba62d088d24",
+      "round_trip_byte_equal": true,
+      "cipher": "GnuPG symmetric AES256, fresh high-entropy archive passphrase",
+      "plaintext_not_added_to_git": true,
+      "retained_setup_failure": "Initial GPG command returned an agent startup error but wrote ciphertext. Decryption under permitted socket-capable execution verified those exact bytes against the supplied ZIP; ciphertext was not replaced.",
+      "credential_custody": "off-repository; private delivery prepared, maintainer acknowledgment not yet recorded"
+    },
+    {
+      "participant": "Test-Willow-27e9a4197734",
+      "file": "audited-supplied-record.zip.asc",
+      "plaintext_zip_sha256": "f5c5acbcb81f5b98606ad56db80c16b19c7e98249e5c5391ed221fcc1c1e6db9",
+      "ciphertext_sha256": "b2cc1d0aff8827ecb6debcd1fcc14292cd58fca359e26a569d81dd42592f4145",
+      "round_trip_byte_equal": true,
+      "credential_custody": "off-repository; private delivery prepared, maintainer acknowledgment not yet recorded",
+      "original_ciphertext_unchanged": true
+    }
+  ],
+  "retained_build_notes": [
+    "First GPG invocation reported agent startup failure while writing ciphertext; later decryption verified those exact bytes.",
+    "First PDF build reported unwritable font caches; a temporary writable font cache resolved the warnings.",
+    "The first link audit ran before its two generated manifest/receipt files were written. That failed audit receipt is retained as VERIFICATION-FIRST-2026-11-27.json; the complete final tree is checked separately."
+  ],
+  "passed": true
+}
