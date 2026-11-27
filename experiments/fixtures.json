@@ -1,0 +1,454 @@
+{
+  "version": 1,
+  "pin_cases": [
+    {
+      "id": "P01-current",
+      "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "body": "**Current PR head**\n`aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa`",
+      "expected": "current"
+    },
+    {
+      "id": "P02-legacy",
+      "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "body": "**Public evidence pin** `aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa`",
+      "expected": "current"
+    },
+    {
+      "id": "P03-stale",
+      "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "body": "**Current PR head** `bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb`",
+      "expected": "stale"
+    },
+    {
+      "id": "P04-missing",
+      "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "body": "Check remains pending.",
+      "expected": "missing"
+    },
+    {
+      "id": "P05-example-only",
+      "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "body": "```md\n**Current PR head** `aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa`\n```",
+      "expected": "missing"
+    },
+    {
+      "id": "P06-example-before-stale",
+      "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "body": "```md\n**Current PR head** `aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa`\n```\n**Current PR head** `bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb`",
+      "expected": "stale"
+    },
+    {
+      "id": "P07-tilde-longer",
+      "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "body": " ~~~~markdown\n~~~\n**Current PR head** `aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa`\n~~~~\n**Current PR head** `bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb`",
+      "expected": "stale"
+    },
+    {
+      "id": "P08-unclosed",
+      "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "body": "````md\n```\n**Current PR head** `aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa`",
+      "expected": "missing"
+    },
+    {
+      "id": "P09-crlf",
+      "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "body": "```\r\n**Current PR head** `bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb`\r\n```\r\n**Current PR head**\r\n`aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa`",
+      "expected": "current"
+    },
+    {
+      "id": "P10-conflicting",
+      "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "body": "**Current PR head** `aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa`\n**Current PR head** `bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb`",
+      "expected": "ambiguous"
+    },
+    {
+      "id": "P11-same-pin-twice",
+      "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "body": "**Current PR head** `aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa`\n**Current PR head** `aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa`",
+      "expected": "current"
+    },
+    {
+      "id": "P12-wrong-closer",
+      "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "body": "~~~\n```\n**Current PR head** `aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa`\n~~~\n",
+      "expected": "missing"
+    },
+    {
+      "id": "P13-blank-after-label",
+      "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "body": "**Current PR head**\n \n`aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa`",
+      "expected": "missing"
+    }
+  ],
+  "recovery_cases": [
+    {
+      "id": "R01-authorized",
+      "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "report": {
+        "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "gate": "passed",
+        "evidence": "checks-17",
+        "blockers": [],
+        "release": null
+      },
+      "fallback": null,
+      "direction": {
+        "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "action": "replay",
+        "source": "maintainer"
+      },
+      "requested_action": "replay",
+      "expected": [
+        "report",
+        "passed",
+        "checks-17",
+        [],
+        "authorized"
+      ]
+    },
+    {
+      "id": "R02-outside-advice",
+      "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "report": {
+        "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "gate": "passed",
+        "evidence": "checks-17",
+        "blockers": [],
+        "release": null
+      },
+      "fallback": null,
+      "direction": {
+        "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "action": "replay",
+        "source": "outside"
+      },
+      "requested_action": "replay",
+      "expected": [
+        "report",
+        "passed",
+        "checks-17",
+        [],
+        "withheld"
+      ]
+    },
+    {
+      "id": "R03-stale-to-fallback",
+      "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "report": {
+        "revision": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "gate": "released",
+        "evidence": "old-release",
+        "blockers": [],
+        "release": null
+      },
+      "fallback": {
+        "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "gate": "held",
+        "evidence": "checks-18",
+        "blockers": [
+          "CI pending"
+        ],
+        "release": null
+      },
+      "direction": {
+        "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "action": "replay",
+        "source": "maintainer"
+      },
+      "requested_action": "replay",
+      "expected": [
+        "handoff",
+        "held",
+        "checks-18",
+        [
+          "CI pending"
+        ],
+        "authorized"
+      ]
+    },
+    {
+      "id": "R04-no-exact-evidence",
+      "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "report": {
+        "revision": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "gate": "passed",
+        "evidence": "checks-17",
+        "blockers": [],
+        "release": null
+      },
+      "fallback": {
+        "revision": "cccccccccccccccccccccccccccccccccccccccc",
+        "gate": "passed",
+        "evidence": "checks-17",
+        "blockers": [],
+        "release": null
+      },
+      "direction": {
+        "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "action": "replay",
+        "source": "maintainer"
+      },
+      "requested_action": "replay",
+      "expected": [
+        "unverified",
+        "unknown",
+        null,
+        [],
+        "withheld"
+      ]
+    },
+    {
+      "id": "R05-checks-not-run",
+      "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "report": {
+        "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "gate": "not_run",
+        "evidence": null,
+        "blockers": [
+          "Key unavailable"
+        ],
+        "release": null
+      },
+      "fallback": null,
+      "direction": null,
+      "requested_action": "replay",
+      "expected": [
+        "report",
+        "not_run",
+        null,
+        [
+          "Key unavailable"
+        ],
+        "withheld"
+      ]
+    },
+    {
+      "id": "R06-scope-mismatch",
+      "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "report": {
+        "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "gate": "passed",
+        "evidence": "checks-17",
+        "blockers": [],
+        "release": null
+      },
+      "fallback": null,
+      "direction": {
+        "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "action": "publish",
+        "source": "maintainer"
+      },
+      "requested_action": "replay",
+      "expected": [
+        "report",
+        "passed",
+        "checks-17",
+        [],
+        "withheld"
+      ]
+    },
+    {
+      "id": "R07-revision-mismatch",
+      "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "report": {
+        "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "gate": "passed",
+        "evidence": "checks-17",
+        "blockers": [],
+        "release": null
+      },
+      "fallback": null,
+      "direction": {
+        "revision": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "action": "replay",
+        "source": "maintainer"
+      },
+      "requested_action": "replay",
+      "expected": [
+        "report",
+        "passed",
+        "checks-17",
+        [],
+        "withheld"
+      ]
+    },
+    {
+      "id": "R08-release-without-receipt",
+      "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "report": {
+        "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "gate": "released",
+        "evidence": "checks-17",
+        "blockers": [],
+        "release": null
+      },
+      "fallback": null,
+      "direction": null,
+      "requested_action": "replay",
+      "expected": [
+        "report",
+        "release_unverified",
+        "checks-17",
+        [],
+        "withheld"
+      ]
+    },
+    {
+      "id": "R09-release-with-receipt",
+      "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "report": {
+        "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "gate": "released",
+        "evidence": "checks-17",
+        "blockers": [],
+        "release": {
+          "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "evidence": "deploy-7"
+        }
+      },
+      "fallback": null,
+      "direction": {
+        "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "action": "inspect",
+        "source": "maintainer"
+      },
+      "requested_action": "inspect",
+      "expected": [
+        "report",
+        "released",
+        "deploy-7",
+        [],
+        "authorized"
+      ]
+    },
+    {
+      "id": "R10-release-wrong-revision",
+      "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "report": {
+        "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "gate": "released",
+        "evidence": "checks-17",
+        "blockers": [],
+        "release": {
+          "revision": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "evidence": "deploy-6"
+        }
+      },
+      "fallback": null,
+      "direction": null,
+      "requested_action": "replay",
+      "expected": [
+        "report",
+        "release_unverified",
+        "checks-17",
+        [],
+        "withheld"
+      ]
+    },
+    {
+      "id": "R11-handoff-only",
+      "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "report": null,
+      "fallback": {
+        "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "gate": "failed",
+        "evidence": "checks-19",
+        "blockers": [
+          "Regression"
+        ],
+        "release": null
+      },
+      "direction": null,
+      "requested_action": "replay",
+      "expected": [
+        "handoff",
+        "failed",
+        "checks-19",
+        [
+          "Regression"
+        ],
+        "withheld"
+      ]
+    },
+    {
+      "id": "R12-current-report-precedes-handoff",
+      "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "report": {
+        "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "gate": "held",
+        "evidence": "checks-17",
+        "blockers": [
+          "Review pending"
+        ],
+        "release": null
+      },
+      "fallback": {
+        "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "gate": "released",
+        "evidence": "checks-17",
+        "blockers": [],
+        "release": {
+          "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "evidence": "deploy-8"
+        }
+      },
+      "direction": {
+        "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "action": "replay",
+        "source": "al"
+      },
+      "requested_action": "replay",
+      "expected": [
+        "report",
+        "held",
+        "checks-17",
+        [
+          "Review pending"
+        ],
+        "withheld"
+      ]
+    },
+    {
+      "id": "R13-report-claim-without-evidence",
+      "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "report": {
+        "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "gate": "passed",
+        "evidence": null,
+        "blockers": [],
+        "release": null
+      },
+      "fallback": null,
+      "direction": null,
+      "requested_action": "replay",
+      "expected": [
+        "report",
+        "unknown",
+        null,
+        [],
+        "withheld"
+      ]
+    },
+    {
+      "id": "R14-no-direction",
+      "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "report": {
+        "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "gate": "passed",
+        "evidence": "checks-17",
+        "blockers": [],
+        "release": null
+      },
+      "fallback": null,
+      "direction": null,
+      "requested_action": "replay",
+      "expected": [
+        "report",
+        "passed",
+        "checks-17",
+        [],
+        "withheld"
+      ]
+    }
+  ]
+}

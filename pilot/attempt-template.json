@@ -1,0 +1,18 @@
+{
+  "packet": null,
+  "attempt_number": null,
+  "operator": null,
+  "participant_session_or_request_id": null,
+  "actual_settings_and_instruction_hash": null,
+  "started_utc": null,
+  "ended_utc": null,
+  "elapsed_seconds": null,
+  "status": null,
+  "received_before_deadline": null,
+  "raw_transcript_or_artifact": null,
+  "tool_or_transport_failures": [],
+  "mitchell_relay_seconds": null,
+  "exposure_and_custody": [],
+  "first_score": null,
+  "scoring_disagreements": []
+}
