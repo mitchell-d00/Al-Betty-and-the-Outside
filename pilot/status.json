@@ -1,0 +1,185 @@
+{
+  "trials": [
+    {
+      "packet": "15cd647eb96f",
+      "status": "NOT_RUN",
+      "attempts": [],
+      "first_score": null,
+      "disagreements": []
+    },
+    {
+      "packet": "237d3fee65b6",
+      "status": "NOT_RUN",
+      "attempts": [],
+      "first_score": null,
+      "disagreements": []
+    },
+    {
+      "packet": "2625c4a1eb0a",
+      "status": "NOT_RUN",
+      "attempts": [],
+      "first_score": null,
+      "disagreements": []
+    },
+    {
+      "packet": "3404885e275a",
+      "status": "NOT_RUN",
+      "attempts": [],
+      "first_score": null,
+      "disagreements": []
+    },
+    {
+      "packet": "5183e0b00651",
+      "status": "NOT_RUN",
+      "attempts": [],
+      "first_score": null,
+      "disagreements": []
+    },
+    {
+      "packet": "51cf9a5a4062",
+      "status": "NOT_RUN",
+      "attempts": [],
+      "first_score": null,
+      "disagreements": []
+    },
+    {
+      "packet": "5499aa158e1e",
+      "status": "NOT_RUN",
+      "attempts": [],
+      "first_score": null,
+      "disagreements": []
+    },
+    {
+      "packet": "5c7fdd02efed",
+      "status": "NOT_RUN",
+      "attempts": [],
+      "first_score": null,
+      "disagreements": []
+    },
+    {
+      "packet": "617c355887ec",
+      "status": "NOT_RUN",
+      "attempts": [],
+      "first_score": null,
+      "disagreements": []
+    },
+    {
+      "packet": "6e949a87d222",
+      "status": "NOT_RUN",
+      "attempts": [],
+      "first_score": null,
+      "disagreements": []
+    },
+    {
+      "packet": "7078330efc50",
+      "status": "NOT_RUN",
+      "attempts": [],
+      "first_score": null,
+      "disagreements": []
+    },
+    {
+      "packet": "9cf40e7be84b",
+      "status": "NOT_RUN",
+      "attempts": [],
+      "first_score": null,
+      "disagreements": []
+    },
+    {
+      "packet": "a791d9c94429",
+      "status": "NOT_RUN",
+      "attempts": [],
+      "first_score": null,
+      "disagreements": []
+    },
+    {
+      "packet": "a7ddd0196b24",
+      "status": "NOT_RUN",
+      "attempts": [],
+      "first_score": null,
+      "disagreements": []
+    },
+    {
+      "packet": "adc443bcb4cb",
+      "status": "NOT_RUN",
+      "attempts": [],
+      "first_score": null,
+      "disagreements": []
+    },
+    {
+      "packet": "b835457fc39b",
+      "status": "NOT_RUN",
+      "attempts": [],
+      "first_score": null,
+      "disagreements": []
+    },
+    {
+      "packet": "c117d1920a0f",
+      "status": "NOT_RUN",
+      "attempts": [],
+      "first_score": null,
+      "disagreements": []
+    },
+    {
+      "packet": "c38cdb60b9e1",
+      "status": "NOT_RUN",
+      "attempts": [],
+      "first_score": null,
+      "disagreements": []
+    },
+    {
+      "packet": "c3f4d9bc1b7f",
+      "status": "NOT_RUN",
+      "attempts": [],
+      "first_score": null,
+      "disagreements": []
+    },
+    {
+      "packet": "db7674303b71",
+      "status": "NOT_RUN",
+      "attempts": [],
+      "first_score": null,
+      "disagreements": []
+    },
+    {
+      "packet": "e3f89a70dd80",
+      "status": "NOT_RUN",
+      "attempts": [],
+      "first_score": null,
+      "disagreements": []
+    },
+    {
+      "packet": "ed047edd9e9b",
+      "status": "NOT_RUN",
+      "attempts": [],
+      "first_score": null,
+      "disagreements": []
+    },
+    {
+      "packet": "f44c929ad9d6",
+      "status": "NOT_RUN",
+      "attempts": [],
+      "first_score": null,
+      "disagreements": []
+    },
+    {
+      "packet": "fb160c69ea26",
+      "status": "NOT_RUN",
+      "attempts": [],
+      "first_score": null,
+      "disagreements": []
+    }
+  ],
+  "summary": {
+    "completed": 0,
+    "timed_out": 0,
+    "attempted": 0,
+    "tool_failures_observed": 0,
+    "fully_correct_by_arm": null,
+    "false_current_by_arm": null,
+    "false_release_by_arm": null,
+    "false_authorization_by_arm": null,
+    "discordance_by_direction": null,
+    "median_fully_correct_seconds_by_arm": null,
+    "mitchell_relay_seconds": null
+  }
+}

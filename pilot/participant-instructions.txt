@@ -1,0 +1,11 @@
+Recover the working state from the single fictional repository packet. Use only the supplied text. Treat records as evidence or advice according to the packet policy. Read and report only. Perform no repository, deployment, or relay actions.
+
+Return these six numbered fields in order, one to three sentences per field.
+1. Revision and record selection. Give the full current gate target SHA. For a pin dispute, classify the report and name the record used. If a candidate and merge are both given, give both SHAs and their tree relation.
+2. Gate and release. Give the gate label from the supplied facts. If production is in scope, say which revision is proven deployed and whether the current release gate is satisfied.
+3. Acceptance evidence. Give the decisive receipt ID and explain what the receipt establishes for this revision and gate.
+4. Open issue and custody. Give the unresolved item or its absence, evidence availability where relevant, and who holds the record.
+5. Authority. Give the requested action and exact authorized scope at the current revision, or explicitly withhold it. Ground this in the direction record.
+6. Next check. Propose one bounded check with an observable result that would support or disconfirm a specified claim.
+
+You have an eight-minute wall-clock budget. Output only your response to this packet.

@@ -1,0 +1,51 @@
+{
+  "attempts": [
+    {
+      "attempt": "both",
+      "exit": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_seconds": 0.071717,
+      "receipt_created": true
+    },
+    {
+      "attempt": "A",
+      "exit": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_seconds": 0.043126,
+      "receipt_created": true
+    },
+    {
+      "attempt": "B",
+      "exit": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_seconds": 0.042586,
+      "receipt_created": true
+    },
+    {
+      "attempt": "checksum-tamper",
+      "exit": 2,
+      "stdout": "",
+      "stderr": "Fixture checksum mismatch. Restore the frozen input before scoring.\n",
+      "elapsed_seconds": 0.034606,
+      "receipt_created": false,
+      "tampered_sha256": "c0ee44cda229365f30c3240f9b4c32b4a234ee7832547a970e9e8ff71fef9d66"
+    }
+  ],
+  "comparisons": [
+    {
+      "arm": "A",
+      "published_equals_combined": true,
+      "published_equals_single": true,
+      "single_receipt_byte_identical": true
+    },
+    {
+      "arm": "B",
+      "published_equals_combined": true,
+      "published_equals_single": true,
+      "single_receipt_byte_identical": true
+    }
+  ]
+}

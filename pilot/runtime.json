@@ -1,0 +1,19 @@
+{
+  "freeze": "2026-11-27",
+  "surface": "OpenAI Responses API, one standalone streamed request per trial",
+  "model": "gpt-4.1-2025-04-14",
+  "request": {
+    "temperature": 0,
+    "max_output_tokens": 1500,
+    "tools": [],
+    "store": false,
+    "stream": true
+  },
+  "instructions_file": "participant-instructions.txt",
+  "user_input": "exact UTF-8 bytes of the one assigned prompts/<packet>.md, with no prefix or suffix",
+  "state": "No previous_response_id, conversation ID, attachments, memory, retrieval, connector, or shared session context",
+  "session_stop": "480 seconds after dispatch, or terminal response sooner. Use monotonic time. Cancel at deadline and retain all output received by then.",
+  "pilot_stop": "After the 24 allocated slots, one first attempt per slot. No replacements in primary analysis.",
+  "runtime_verified": false,
+  "reason": "No standalone model endpoint or isolated participant launcher was available in the preparation session. Record actual model and settings before opening trial packets."
+}
