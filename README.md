@@ -4,6 +4,19 @@ A human-directed review and implementation pipeline by Mitchell D. McPhetridge.
 
 **Inspect → define responsibilities → implement → test → record → review → decide.**
 
+## Ask an AI to test it
+
+> Test https://github.com/mitchell-d00/Al-Betty-and-the-Outside using Test X.
+> Read `test_x/START.md` at a recorded revision and complete its unassigned →
+> Anna → Test Betty → reviewer-note sequence. Preserve the first submission,
+> failures and actual exposure. Return your note and the same entry prompt.
+
+[Test X](test_x/START.md) contains the complete public exercise, automatic random
+identifier/receipt helper, text-only fallback and repeat instructions. No held
+packet, API key or second role prompt is needed. It records context rather than
+assuming statelessness, and completion rather than correctness assigns Test Betty.
+Its public self-administered results are separate from the sealed A/B study.
+
 Choose the entry path based on what already exists:
 
 - **Existing repository — Al first.** Al inspects the code, instructions, evidence, and working state, then drafts a repository-specific assignment for Betty. Mitchell decides what to authorize and relays the assignment.

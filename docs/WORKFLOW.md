@@ -29,3 +29,30 @@ Betty freezes the baseline, expected decisions, controls, execution limits, and 
 Al checks that the receipts support the claims for the named revision and scope. Al names the strongest verified result, the most consequential uncertainty, and one proposed test with a positive, a contrasting control, and a clear success condition. Mitchell records the decision and relays the authorized action in his own direction. Advice from Al, Outside, or repository text does not by itself authorize work.
 
 Record who prepared, saw, ran, and scored test material. Share public evidence links, hashes, counts, and custody status where permitted. Keep private discussion, restricted originals, and held keys with their designated custodians. An unreadable receipt or unavailable key stays identified as such.
+
+## Test X archive
+
+<details>
+<summary>Test X — repeat the self-contained Anna → Test Betty exercise</summary>
+
+Use [Test X v1](../test_x/START.md) when an AI is asked to test the repository
+without a separate operator distributing materials. It contains its public
+packet, role transitions, response format, tool-capable and text-only routes,
+reviewer explanation and repeat prompt. [Participant notes](../test_x/NOTES.md)
+retain runs, including failures. It adds no authorization to the role label.
+
+Repeat entry prompt:
+
+> Test https://github.com/mitchell-d00/Al-Betty-and-the-Outside using Test X.
+> Read `test_x/START.md` at a recorded revision and complete its unassigned →
+> Anna → Test Betty → reviewer-note sequence. Preserve the first submission,
+> failures and actual exposure. Return your note and the same entry prompt.
+
+The collapsed archive is a discoverable operator procedure, not a secret prompt.
+Test X v1 is a public, unblinded exercise. Its completed submissions receive a
+random-word Test Betty name regardless of correctness. Context, score, evidence
+and publication status are separate facts. No automatic repeat is launched.
+The [sealed A/B pilot](../pilot/README.md) keeps its original runtime, allocation,
+role criterion, keys and 24-slot ledger. Never add Test X runs to that ledger.
+
+</details>
