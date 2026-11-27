@@ -1,0 +1,14 @@
+name: Check public replays and Test X
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -B experiments/run.py --output /tmp/replay.json
+      - run: python -B -m unittest discover -s test_x -p 'test_*.py' -v

@@ -1,0 +1,22 @@
+{
+  "report_pin": "current",
+  "working_state": {
+    "source": "handoff",
+    "gate": "held",
+    "evidence": "checks-A",
+    "blockers": ["browser check pending"],
+    "key_availability": "inaccessible",
+    "custodian": "Mitchell",
+    "requested_action": "inspect",
+    "authorization": "authorized"
+  },
+  "release": {
+    "candidate": "cccccccccccccccccccccccccccccccccccccccc",
+    "merge": "dddddddddddddddddddddddddddddddddddddddd",
+    "tree_relation": "identical",
+    "tested_receipt": "tests-C",
+    "deployed_revision": "ffffffffffffffffffffffffffffffffffffffff",
+    "gate": "release_unverified",
+    "authorized_action": "inspect M"
+  }
+}

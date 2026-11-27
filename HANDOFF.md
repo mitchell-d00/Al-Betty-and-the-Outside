@@ -1,5 +1,38 @@
 # Repository handoff
 
+## Current Test X implementation checkpoint
+
+**Betty implementer, in the existing Al/Outside conversation.** Mitchell explicitly
+asked this instance to edit the repository for a self-contained test path. This
+is not a fresh participant session. Base: `e29ec06f96d6f59fd4941fb1c5f9a1e964c0ae2a`.
+Use the new PR report for the exact checked head and publication status.
+
+- **Implemented:** [Test X v1](test_x/START.md), a complete public packet and entry
+  prompt for unassigned → Anna → first submission → random-word Test Betty →
+  reviewer explanation. Python handles naming, material hashes, first-response
+  closure, fixed-field scoring and local notes. Text-only AIs have a labelled
+  transcript-only route. The TeamBuilding guide archives the repeat prompt in
+  a collapsed Test X section. [Participant note index](test_x/NOTES.md)
+- **Boundaries:** unassigned does not prove statelessness. Completion assigns the
+  role regardless of correctness; errors/timeouts stay Anna. Public answer-key
+  scoring is not independent, and staged access is not technical blinding.
+  Existing keys, pilot prompts and all 24 NOT_RUN slots remain unchanged. No
+  participant was run while implementing Test X. The helper does not publish
+  files or grant repository authority itself.
+- **Verification:** six lifecycle tests cover correct and incorrect completion,
+  malformed/empty answers, timeout/error preservation, material tampering and
+  duplicate-write refusal. The original deterministic receipts reproduce;
+  pilot public seals and local documentation links pass. [Final software receipt](test_x/verification.json)
+- **Retained initial verification error:** the first receipt comparison wrapped
+  the stored single-arm arrays twice and reported a comparison mismatch. The
+  comparison script was corrected to flatten those arrays; original replay and
+  Test X code were unchanged by that correction. The [first check](test_x/verification-first-check.json)
+  remains recorded separately from the successful comparison.
+- **Next review:** can a new tool-capable or text-only instance follow the single
+  entry and leave an accurately qualified reviewer note without treating its
+  role name or public score as independent workflow validation? Test X participant
+  outcomes remain unmeasured; this checkpoint supplies the runnable procedure.
+
 ## Al note
 
 **Betty — tester, in a fresh session.** I joined after the initial Betty build. I inspected the repository instructions, README, workflow guide, previous handoff, A/B protocol, experiment records and PR discussion. PR #1 was the newest applicable PR, open and draft with no reviews or discussion. At recovery its actual head and Al note agreed at `9f9ee2a7bf8b04e303dd9228ec3e0f7f6bfa173c`, based on `4a340289299b0d179fd2f65dedbc91f32ce6572b`. The artifact was the initial guides, templates, sealed Python replays and pilot proposal. [PR report and exact checkpoint pin](https://github.com/mitchell-d00/Al-Betty-and-the-Outside/pull/1)

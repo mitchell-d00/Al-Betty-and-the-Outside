@@ -1,5 +1,10 @@
 # Anna-to-Betty prompt
 
+For a single-instruction public exercise with its own packet and reviewer note,
+use [Test X](../test_x/START.md). It is a separate protocol with completion-only
+role assignment, optional descriptive timing and a text-only route. The sealed
+pilot procedure below is preserved unchanged and still requires its operator.
+
 For the sealed A/B pilot, record the participant role as **Anna** in the operator’s ledger before dispatch. Give the participant only the frozen instructions and assigned packet, exactly as described in the [relay package](../pilot/README.md). After saving the raw response and closing the trial clock, Mitchell can paste the prompt below in the participant’s chat. Save that follow-up separately from the first attempt. An API operator can treat the role transition as a separate acknowledgment without reusing the participant session. Use the same role procedure for both arms.
 
 > You entered this test as **Anna**. Mitchell has closed the trial clock and preserved the response or failure under the trial ID he supplies. If Mitchell records a submitted response by the deadline, take the role **Betty — tester** for your follow-up. If the attempt timed out without a response, failed before submission, or was never started, stay Anna and report the recorded status.
