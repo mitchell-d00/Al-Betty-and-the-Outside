@@ -1,0 +1,307 @@
+{
+  "source_pr": "https://github.com/mitchell-d00/Al-Betty-and-the-Outside/pull/5",
+  "cases_passed": 9,
+  "cases_total": 9,
+  "false_current": 0,
+  "false_release": 0,
+  "false_authorization": 0,
+  "cases": [
+    {
+      "id": "M01-live-pr5-transition",
+      "expected": {
+        "report_pin": "current",
+        "tested_source_reached_main": true,
+        "deployment_verified": false,
+        "action_authorized": false
+      },
+      "observed": {
+        "report_pin": "current",
+        "tested_source_reached_main": true,
+        "deployment_verified": false,
+        "action_authorized": false
+      },
+      "git": {
+        "tested": {
+          "revision": "4e605e46670e6056e1f79e29f7329496ac1de340",
+          "tree": "b601b9a9d49b56734eb634e6f8ec32f130ee251d",
+          "parents": [
+            "1875b585bc568ea22291654fb7621e97b1426da7"
+          ]
+        },
+        "target": {
+          "revision": "1f1fec3d61f9481ab1a85162ec35289dc1bd6e5d",
+          "tree": "b601b9a9d49b56734eb634e6f8ec32f130ee251d",
+          "parents": [
+            "ccb4a792e8c241afa1ccb606855368cde6f31895",
+            "4e605e46670e6056e1f79e29f7329496ac1de340"
+          ]
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "M02-all-current-positive",
+      "expected": {
+        "report_pin": "current",
+        "tested_source_reached_main": true,
+        "deployment_verified": true,
+        "action_authorized": true
+      },
+      "observed": {
+        "report_pin": "current",
+        "tested_source_reached_main": true,
+        "deployment_verified": true,
+        "action_authorized": true
+      },
+      "git": {
+        "tested": {
+          "revision": "4e605e46670e6056e1f79e29f7329496ac1de340",
+          "tree": "b601b9a9d49b56734eb634e6f8ec32f130ee251d",
+          "parents": [
+            "1875b585bc568ea22291654fb7621e97b1426da7"
+          ]
+        },
+        "target": {
+          "revision": "1f1fec3d61f9481ab1a85162ec35289dc1bd6e5d",
+          "tree": "b601b9a9d49b56734eb634e6f8ec32f130ee251d",
+          "parents": [
+            "ccb4a792e8c241afa1ccb606855368cde6f31895",
+            "4e605e46670e6056e1f79e29f7329496ac1de340"
+          ]
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "M03-stale-report-pin",
+      "expected": {
+        "report_pin": "stale",
+        "tested_source_reached_main": false,
+        "deployment_verified": false,
+        "action_authorized": false
+      },
+      "observed": {
+        "report_pin": "stale",
+        "tested_source_reached_main": false,
+        "deployment_verified": false,
+        "action_authorized": false
+      },
+      "git": {
+        "tested": {
+          "revision": "4e605e46670e6056e1f79e29f7329496ac1de340",
+          "tree": "b601b9a9d49b56734eb634e6f8ec32f130ee251d",
+          "parents": [
+            "1875b585bc568ea22291654fb7621e97b1426da7"
+          ]
+        },
+        "target": {
+          "revision": "1f1fec3d61f9481ab1a85162ec35289dc1bd6e5d",
+          "tree": "b601b9a9d49b56734eb634e6f8ec32f130ee251d",
+          "parents": [
+            "ccb4a792e8c241afa1ccb606855368cde6f31895",
+            "4e605e46670e6056e1f79e29f7329496ac1de340"
+          ]
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "M04-equal-trees-wrong-ancestry",
+      "expected": {
+        "report_pin": "current",
+        "tested_source_reached_main": false,
+        "deployment_verified": false,
+        "action_authorized": false
+      },
+      "observed": {
+        "report_pin": "current",
+        "tested_source_reached_main": false,
+        "deployment_verified": false,
+        "action_authorized": false
+      },
+      "git": {
+        "tested": {
+          "revision": "1f1fec3d61f9481ab1a85162ec35289dc1bd6e5d",
+          "tree": "b601b9a9d49b56734eb634e6f8ec32f130ee251d",
+          "parents": [
+            "ccb4a792e8c241afa1ccb606855368cde6f31895",
+            "4e605e46670e6056e1f79e29f7329496ac1de340"
+          ]
+        },
+        "target": {
+          "revision": "4e605e46670e6056e1f79e29f7329496ac1de340",
+          "tree": "b601b9a9d49b56734eb634e6f8ec32f130ee251d",
+          "parents": [
+            "1875b585bc568ea22291654fb7621e97b1426da7"
+          ]
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "M05-different-tree",
+      "expected": {
+        "report_pin": "current",
+        "tested_source_reached_main": false,
+        "deployment_verified": false,
+        "action_authorized": false
+      },
+      "observed": {
+        "report_pin": "current",
+        "tested_source_reached_main": false,
+        "deployment_verified": false,
+        "action_authorized": false
+      },
+      "git": {
+        "tested": {
+          "revision": "4e605e46670e6056e1f79e29f7329496ac1de340",
+          "tree": "b601b9a9d49b56734eb634e6f8ec32f130ee251d",
+          "parents": [
+            "1875b585bc568ea22291654fb7621e97b1426da7"
+          ]
+        },
+        "target": {
+          "revision": "ccb4a792e8c241afa1ccb606855368cde6f31895",
+          "tree": "3f83093539ba59f4323e66756c2f6913ff571156",
+          "parents": [
+            "3adc687fdf2269749bbc0787dac96b34fb1499ca",
+            "e2886fbadd1def33900408404910f81c97018a32"
+          ]
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "M06-tested-head-deployment-is-stale",
+      "expected": {
+        "report_pin": "current",
+        "tested_source_reached_main": true,
+        "deployment_verified": false,
+        "action_authorized": true
+      },
+      "observed": {
+        "report_pin": "current",
+        "tested_source_reached_main": true,
+        "deployment_verified": false,
+        "action_authorized": true
+      },
+      "git": {
+        "tested": {
+          "revision": "4e605e46670e6056e1f79e29f7329496ac1de340",
+          "tree": "b601b9a9d49b56734eb634e6f8ec32f130ee251d",
+          "parents": [
+            "1875b585bc568ea22291654fb7621e97b1426da7"
+          ]
+        },
+        "target": {
+          "revision": "1f1fec3d61f9481ab1a85162ec35289dc1bd6e5d",
+          "tree": "b601b9a9d49b56734eb634e6f8ec32f130ee251d",
+          "parents": [
+            "ccb4a792e8c241afa1ccb606855368cde6f31895",
+            "4e605e46670e6056e1f79e29f7329496ac1de340"
+          ]
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "M07-old-direction-current-deployment",
+      "expected": {
+        "report_pin": "current",
+        "tested_source_reached_main": true,
+        "deployment_verified": true,
+        "action_authorized": false
+      },
+      "observed": {
+        "report_pin": "current",
+        "tested_source_reached_main": true,
+        "deployment_verified": true,
+        "action_authorized": false
+      },
+      "git": {
+        "tested": {
+          "revision": "4e605e46670e6056e1f79e29f7329496ac1de340",
+          "tree": "b601b9a9d49b56734eb634e6f8ec32f130ee251d",
+          "parents": [
+            "1875b585bc568ea22291654fb7621e97b1426da7"
+          ]
+        },
+        "target": {
+          "revision": "1f1fec3d61f9481ab1a85162ec35289dc1bd6e5d",
+          "tree": "b601b9a9d49b56734eb634e6f8ec32f130ee251d",
+          "parents": [
+            "ccb4a792e8c241afa1ccb606855368cde6f31895",
+            "4e605e46670e6056e1f79e29f7329496ac1de340"
+          ]
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "M08-current-direction-wrong-action",
+      "expected": {
+        "report_pin": "current",
+        "tested_source_reached_main": true,
+        "deployment_verified": true,
+        "action_authorized": false
+      },
+      "observed": {
+        "report_pin": "current",
+        "tested_source_reached_main": true,
+        "deployment_verified": true,
+        "action_authorized": false
+      },
+      "git": {
+        "tested": {
+          "revision": "4e605e46670e6056e1f79e29f7329496ac1de340",
+          "tree": "b601b9a9d49b56734eb634e6f8ec32f130ee251d",
+          "parents": [
+            "1875b585bc568ea22291654fb7621e97b1426da7"
+          ]
+        },
+        "target": {
+          "revision": "1f1fec3d61f9481ab1a85162ec35289dc1bd6e5d",
+          "tree": "b601b9a9d49b56734eb634e6f8ec32f130ee251d",
+          "parents": [
+            "ccb4a792e8c241afa1ccb606855368cde6f31895",
+            "4e605e46670e6056e1f79e29f7329496ac1de340"
+          ]
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "M09-al-advice-current-deployment",
+      "expected": {
+        "report_pin": "current",
+        "tested_source_reached_main": true,
+        "deployment_verified": true,
+        "action_authorized": false
+      },
+      "observed": {
+        "report_pin": "current",
+        "tested_source_reached_main": true,
+        "deployment_verified": true,
+        "action_authorized": false
+      },
+      "git": {
+        "tested": {
+          "revision": "4e605e46670e6056e1f79e29f7329496ac1de340",
+          "tree": "b601b9a9d49b56734eb634e6f8ec32f130ee251d",
+          "parents": [
+            "1875b585bc568ea22291654fb7621e97b1426da7"
+          ]
+        },
+        "target": {
+          "revision": "1f1fec3d61f9481ab1a85162ec35289dc1bd6e5d",
+          "tree": "b601b9a9d49b56734eb634e6f8ec32f130ee251d",
+          "parents": [
+            "ccb4a792e8c241afa1ccb606855368cde6f31895",
+            "4e605e46670e6056e1f79e29f7329496ac1de340"
+          ]
+        }
+      },
+      "passed": true
+    }
+  ]
+}

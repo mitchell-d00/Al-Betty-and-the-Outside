@@ -1,5 +1,58 @@
 # Repository handoff
 
+## Betty report for Al · PR #5 recovery development cycle
+
+Mitchell authorized local implementation and tests only. There were no open PRs
+at recovery. The baseline was default-branch head
+`1f1fec3d61f9481ab1a85162ec35289dc1bd6e5d`.
+[PR #5](https://github.com/mitchell-d00/Al-Betty-and-the-Outside/pull/5) was the
+latest merged PR. Its report and actual tested head both resolved to
+`4e605e46670e6056e1f79e29f7329496ac1de340`.
+The [historical CI run](https://github.com/mitchell-d00/Al-Betty-and-the-Outside/actions/runs/46011645328)
+passed at that tested head. GitHub reported zero changed files at the merge.
+Local Git confirmed that the tested head is a parent of the merge and both have
+tree `b601b9a9d49b56734eb634e6f8ec32f130ee251d`. This credits the tested source on
+main. GitHub publication of the paper archives is recorded in PR #5. A separate
+deployment receipt at the merge remains unverified.
+
+The sealed [cases and report](experiments/pr5-recovery/SHA256SUMS) were committed
+at `f7aa9a54856f92c13b65b00be99b57807ee2f181` before implementation or replay.
+The tested source commit is `7f10477d841e4df8fc04b4b43f2191fda145799e`.
+The runner reads parent and tree IDs from Git and reuses the report-pin parser.
+CI requests full history to make the historical commits available. All four
+decisions must match in all nine cases. A false-current, false-release, or
+false-authorization outcome fails the replay. Deployment and next-action
+authority each require their own exact-target record.
+
+- The first run passed **9/9** with **0/1 false-current, 0/5 false-release, and
+  0/7 false-authorization** opportunities. [Raw per-case output](experiments/pr5-recovery/result.json)
+  has SHA-256 `572d82636bb50990e16c04d0548ca260b2fc668cb90fdf9a92eb36ed0bcbf613`.
+- Both original arms matched every field of their published receipts. Test X
+  lifecycle passed **6/6** and **35/35 available public** pilot files matched
+  their seals. Two held entries were absent from the checkout. Held custody
+  remains unverified. Working-tree and baseline-to-candidate whitespace checks
+  passed.
+- The first shell read failed at the proxy and a direct DNS diagnostic also
+  failed. The approved read-only proxy retry and isolated clone succeeded.
+  An initial connector look for `.github/workflows/ci.yml` returned 404. The
+  checked-out workflow is `.github/workflows/checks.yml`. These were setup
+  failures. All first-attempt verification commands at the source pin exited 0.
+  Raw outputs and exit statuses are in the local sibling workspace directory
+  `boa-betty-pr5-receipts`.
+- This GPT-6-based Codex conversation had prior BOA, Test X, handoff dry-run and
+  B-Tests context. Exact model variant and reasoning setting are unknown. Betty
+  authored, ran, and scored the public development cases in this conversation.
+  No held keys or decrypted submissions were read. No Anna participant run,
+  sealed A/B slot, or new hosted CI run was launched. No effectiveness or
+  false-acceptance estimate follows from this replay.
+
+The source and this evidence are local commits. Mitchell retains the decision
+on any push, PR, merge, deployment, or archive publication.
+
+**Question for Al:** Does the output distinguish a verified same-tree merge
+from a release or permission claim clearly enough when the only deployment
+receipt is pinned to the tested parent of the merge?
+
 ## Current paper and archive reconciliation · 27 November 2026
 
 Mitchell asked the existing Betty implementation session to compare the supplied
