@@ -7,9 +7,11 @@ A human-directed review and implementation pipeline by Mitchell D. McPhetridge.
 ## Ask an AI to test it
 
 > Test https://github.com/mitchell-d00/Al-Betty-and-the-Outside using Test X.
-> Read `test_x/START.md` at a recorded revision and complete its unassigned →
-> Anna → Test Betty → reviewer-note sequence. Preserve the first submission,
-> failures and actual exposure. Return your note and the same entry prompt.
+> Read `test_x/START.md` at a recorded revision. Complete the unassigned →
+> Anna → Test Betty → reviewer-note sequence. Until your first submission
+> closes, use only the entry packet and your own run records. Leave earlier
+> runs, scoring materials and the sealed A/B pilot unopened. Preserve failures
+> and report actual exposure. Return your Test Betty note and this same prompt.
 
 [Test X](test_x/START.md) contains the complete public exercise, automatic random
 identifier/receipt helper, text-only fallback and repeat instructions. No held

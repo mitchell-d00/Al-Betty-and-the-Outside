@@ -10,7 +10,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
-PROTOCOL = "test-x-v1"
+PROTOCOL = "test-x-v1.1"
 WORDS = ("Cedar", "Otter", "Willow", "Quartz", "Heron", "Maple", "Kestrel", "Orchid")
 
 
@@ -160,9 +160,11 @@ or end-to-end workflow effectiveness. No sealed A/B slot was executed here.
 ## Repeat entry
 
 Test https://github.com/mitchell-d00/Al-Betty-and-the-Outside using Test X.
-Read `test_x/START.md` at a recorded revision and follow its unassigned → Anna →
-Test Betty → reviewer-note sequence. Preserve the first response and failures.
-Do not launch repeats automatically. Mitchell directs any publication.
+Read `test_x/START.md` at a recorded revision. Complete the unassigned →
+Anna → Test Betty → reviewer-note sequence. Until your first submission
+closes, use only the entry packet and your own run records. Leave earlier
+runs, scoring materials and the sealed A/B pilot unopened. Preserve failures
+and report actual exposure. Return your Test Betty note and this same prompt.
 """
     with (args.run / "BETTY-NOTE.md").open("x", encoding="utf-8") as stream:
         stream.write(note)

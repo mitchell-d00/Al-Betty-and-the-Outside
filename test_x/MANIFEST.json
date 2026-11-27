@@ -1,9 +1,9 @@
 {
-  "protocol": "test-x-v1",
+  "protocol": "test-x-v1.1",
   "scope": "Public self-administered exercise; not A/B participant evidence",
   "files": {
-    "START.md": "ab44acb4b05b1d18da71b8c2af68fd501fe45a6944e07ce600756ea90d891bdd",
+    "START.md": "9143c9467590b511a14d0f0a9b418da3ee8d1a5e4cf105a5dad026d0a6c615dd",
     "expected.json": "d1ec1c3512ed8485feae4b510bf8851353128f47e7a9de5e02a827e103398dbd",
-    "run.py": "fa4866d5af5c39f6ba129f8d267ba6325b0b9df8bfe11dc810ef55b9318710f4"
+    "run.py": "93017d09f049bb26e29a3b2d4c9858a743840cb1bed5beb89e81ef9a5062d28c"
   }
 }
