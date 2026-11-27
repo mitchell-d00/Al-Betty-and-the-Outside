@@ -1,0 +1,10 @@
+{
+  "author": "<named author>",
+  "role": "Al",
+  "reviewed_commit": "<full commit SHA>",
+  "evidence": ["<pinned source, receipt, or comparison>"],
+  "advice": [{"id": "a1", "text": "<one bounded proposal and its acceptance condition>"}],
+  "open_questions": ["<unresolved question>"],
+  "authorization_source": null,
+  "implementation_override": null
+}

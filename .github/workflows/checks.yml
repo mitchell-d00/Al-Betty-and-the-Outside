@@ -15,3 +15,5 @@ jobs:
       - run: python -B experiments/run.py --output /tmp/replay.json
       - run: python -B -m unittest discover -s test_x -p 'test_*.py' -v
       - run: python -B experiments/recover_pr5.py
+      - run: python -B tools/check_al_notes.py
+      - run: python -B -m unittest discover -s tools -p test_al_notes.py -v

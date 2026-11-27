@@ -2,11 +2,11 @@
 
 ## Choose the entry path
 
-**Existing repository, Al first.** Mitchell asks Al to inspect the artifact, including the normal entry points, implementation, repository instructions, tests, active branch, published evidence, and unresolved decisions. Al drafts a repository-specific assignment for Betty that names the baseline, deliverable, scope, commands, acceptance tests, and protected behavior. Mitchell authorizes and relays the assignment.
+**Existing repository, Al first.** Mitchell asks Al to inspect the artifact, including the normal entry points, implementation, repository instructions, tests, active branch, published evidence, and unresolved decisions. Al drafts a repository-specific assignment for Betty that names the baseline, deliverable, scope, commands, acceptance tests, and protected behavior. Mitchell authorizes the assignment. The repository can relay it through Al Notes.
 
-**New repository, Betty first.** Betty builds the first working version under Mitchell’s direction. She leaves an Al note recording what exists, its exact revision, decisions and rationale, checks and evidence, limitations, and the next review question. Mitchell relays it for Al’s first review. A placeholder repository can still be a new project when the initial artifact remains to be built.
+**New repository, Betty first.** Betty builds the first working version under Mitchell’s direction. She leaves an Al note recording what exists, its exact revision, decisions and rationale, checks and evidence, limitations, and the next review question. Mitchell can point Al to that note for the first review. A placeholder repository can still be a new project when the initial artifact remains to be built.
 
-**Shared loop.** Betty builds and records → Mitchell relays → Al reviews → Mitchell decides and relays → Betty continues. For an active cycle, recover the last verified applied state before continuing.
+**Shared loop.** Betty builds and records → Al reviews → Mitchell decides → Betty continues. The repository can carry the records between these steps. For an active cycle, recover the last verified applied state before continuing.
 
 | Role | Responsibility | What it leaves |
 | --- | --- | --- |
@@ -14,6 +14,16 @@
 | Al | Inspects implementation and evidence and challenges the weakest consequential claim | A read-only review grounded in the checked revision and one bounded, falsifiable next test |
 | Betty | Implements authorized work, freezes tests, runs checks, and preserves attempts | Tested changes, exact receipts, open issues, and an Al note or Betty report for Al |
 | Outside | Explores possibilities and sharpens objections with Mitchell | Ideas Mitchell can choose to carry into the work |
+
+## Relay through Al Notes
+
+Read [Al Notes](../al-notes/README.md) during ordinary development or after
+a participant submission closes. Al publishes versioned advice tied to the
+reviewed commit. Mitchell records authorization separately. Betty acknowledges
+the exact note commit and records what she applied, rejected, deferred, or
+tested. A Mitchell-approved implementation override stays labeled as Al work
+and supplies no independent review. The manual relay remains available. Any
+benefits of repository relay remain unmeasured.
 
 ## Recover state before continuing
 

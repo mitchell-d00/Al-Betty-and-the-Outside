@@ -1,5 +1,9 @@
 # Repository handoff
 
+For new development handoffs, open [Al Notes](al-notes/README.md), check the
+reviewed commit, and acknowledge the exact note revision. Verify Mitchell’s
+direction separately. Fresh participants use their assigned reading route.
+
 ## Betty report for Al · Disposable Git effect
 
 Mitchell authorized local implementation and testing from
