@@ -1,5 +1,45 @@
 # Repository handoff
 
+## Current paper and archive reconciliation · 27 November 2026
+
+Mitchell asked the existing Betty implementation session to compare the supplied
+repository and Orchid ZIPs with GitHub, check the papers, archive both papers and
+the exact repository ZIP, and merge after verification. This audit session is not
+a fresh participant or blinded scorer. Use PR #5's current report for the exact
+checked head and final publication receipt.
+
+- PR #4's unchanged v1.1 implementation passed its six lifecycle checks and
+  original deterministic replay and merged as `ccb4a792e8c241afa1ccb606855368cde6f31895`.
+- [Both papers](papers/README.md) are in `papers/archive/`. The supplied original
+  seven-page PDF is byte-identical history. The empirical Markdown/PDF was checked
+  against the records and revised to distinguish reported Willow evidence from
+  the newly audited Orchid response. The current governance prompt states both
+  entry paths; the original paper's appendix is preserved.
+- The [supplied repository ZIP](papers/archive/snapshots/README.md) stays unchanged
+  with per-member hashes. It matches a composite of the original PR #4 and #5
+  trees, not a source export from one Git commit or the final main tree.
+- Orchid's first-response and prompt hashes, pinned material manifest and 16/16
+  exact score were recomputed. Its original receipt remains LOCAL_ONLY at closure;
+  later encrypted archival is recorded separately. Identity, prior access order,
+  model settings and timing origin are not independently attested.
+- Both supplied participant ZIPs are encrypted before Git staging. Fresh
+  high-entropy archive credentials are held off-repository for private delivery
+  to Mitchell. Decryption reproduced the original ZIPs byte for byte. Initial GPG agent-startup warnings
+  and the later successful verification are retained in the audit receipt.
+- No original Willow credential was supplied; its existing ciphertext remains
+  untouched. Mitchell later supplied a separate plaintext ZIP. Its hashes and
+  original v1 scorer reproduce 15/16, and its prose scopes inspection to M. The
+  supplied ZIP is archived as an additional encrypted audit copy, not a new run.
+  All 24 A/B slots remain NOT_RUN. No participant trial was run during the audit.
+
+[Audit](papers/archive/AUDIT-2026-11-27.md) ·
+[Verification receipt](papers/archive/VERIFICATION-2026-11-27.json)
+
+Next reviewer question: do the historical source, versioned public observations,
+private original records and final archive manifests make the empirical claims
+reproducible without turning the uncontrolled cross-version observations into
+an A/B comparison?
+
 ## Current Test X implementation checkpoint
 
 **Betty implementer, in the existing Al/Outside conversation.** Mitchell explicitly

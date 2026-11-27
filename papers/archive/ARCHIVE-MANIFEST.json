@@ -1,0 +1,20 @@
+{
+  "schema": "paper-archive-v1",
+  "date": "2026-11-27",
+  "historical_original_preserved": true,
+  "source_snapshot_is_supplied_composite": true,
+  "files": {
+    "papers/README.md": "9e8a4bc7a94e3596ea31328f98df2beb5d3076e501718d0530874d930e708aa5",
+    "papers/TeamBuilding-Governance-Prompt.md": "d5dd57b8ded10af10e56d431c97476939bc5a40dd81f024312bfa59256d42047",
+    "papers/TeamBuilding-Governance-Prompt.pdf": "c2f48b8e781ee5d684e25f5b502bfdaa2be2579dd8df59a52f0b0a0263589f06",
+    "papers/archive/AUDIT-2026-11-27.md": "8a44424aad310aa94fd593d788faa9c03e02514dfeb97173121b9bc8184c397c",
+    "papers/archive/Al-Betty-and-the-Outside-2026-11-25.pdf": "f0a5b771351d60a0cf207b68fdc341f58c4b1a14f1faeb6626b9de3cb7489525",
+    "papers/archive/Empirical-Al-Betty-and-the-Outside-2026-11-27.md": "f8c0ab3597b34805b6fc2709f894453c48b06a498ad76c72cd4295986d698597",
+    "papers/archive/Empirical-Al-Betty-and-the-Outside-2026-11-27.pdf": "1cbe17e9a69f8029b6cbd5213296400889f99d5b878a0234ea04c430cbef22a3",
+    "papers/archive/VERIFICATION-FIRST-2026-11-27.json": "6e03fb842ac4dd0ade5103929e867eae3ff6bac44458950d88a701e7b7a33be2",
+    "papers/archive/snapshots/Al-Betty-and-the-Outside-supplied-state-2026-11-27.zip": "9ad74f6bc63c8a553e3e87c99371f397f2d2f7c25ac2dd9040764808957348f6",
+    "papers/archive/snapshots/README.md": "05294d6ffd4d5bf6cb19ea4d459f2473b8df09f3d8b6947700e9da22c0e8c2d1",
+    "papers/archive/snapshots/SNAPSHOT-MANIFEST.json": "d013a1ae743599426bfc3fd198221118cebab799fb181a9dc9ea10c8881363fa",
+    "papers/build.py": "10da8ace8865f2cf3f0637413e75b10ba8bfa08c87c037f92b166cf90b1fec7e"
+  }
+}

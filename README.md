@@ -2,6 +2,10 @@
 
 A human-directed review and implementation pipeline by Mitchell D. McPhetridge.
 
+[Papers, current governance prompt and pinned repository snapshot](papers/README.md)
+are post-submission research material. An Anna should leave them unopened until
+closing the first Test X response.
+
 **Inspect → define responsibilities → implement → test → record → review → decide.**
 
 ## Ask an AI to test it
