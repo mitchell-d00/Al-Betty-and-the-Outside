@@ -31,3 +31,9 @@ Keep the evidence available and the information budget comparable. Give both arm
 | B5 · Test the full cycle | Does reviewer separation change the rate of detected missed controls or acceptance errors? Compare single-session review with separate Al review after the same implementation, with the same human gate and independently scored outcomes. | Whether a larger trial of the full workflow is warranted. Track reviewer time and Mitchell’s relay time. |
 
 B1–B3 can supply fresh recovery scenarios. B4 and B5 need their own frozen packets or designs and remain `NOT_RUN`. Keep raw attempts, scoring disagreements, and all reported limits with the final receipt.
+
+## Open question for a later study
+
+A later study should test a workflow that uses higher reasoning for Al’s review and planning and lower reasoning for Betty’s bounded implementation, with the same tests and CI gates. Record the actual model snapshot and reasoning setting for each role. Whether the configuration reduces elapsed time or cost while preserving quality remains an empirical question.
+
+Keep model and reasoning settings matched across both arms of the current handoff pilot. For a later comparison, vary Betty’s reasoning setting directly while holding Al’s setting, the handoff, implementation scope, tools, and acceptance criteria constant. Freeze the comparison and scoring before dispatch. Compare implementation quality, regressions, CI outcomes, rework, elapsed time, and cost. Record Mitchell’s relay effort separately. The later study remains `NOT_RUN`.
