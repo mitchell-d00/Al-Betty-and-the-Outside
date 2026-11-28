@@ -4,6 +4,27 @@ For new development handoffs, open [Al Notes](al-notes/README.md), check the
 reviewed commit, and acknowledge the exact note revision. Verify Mitchell’s
 direction separately. Fresh participants use their assigned reading route.
 
+## Ordinary-development catalog · 28 November 2026
+
+Open the [revision-pinned workflow and evidence catalog](docs/WORKFLOW-CATALOG-2026-11-28.md)
+for BOA's workflow changes and MPLPB as a read-only worked example. It includes
+post-submission results. Fresh participants stay on their assigned route.
+
+## Verified BOA PR #6 merge receipt · 27 November 2026
+
+The local-only report below is preserved as the historical test checkpoint.
+[PR #6](https://github.com/mitchell-d00/Al-Betty-and-the-Outside/pull/6) merged
+the checked head `49f33e2ce52b811ba09b482442b9905ff2cb4159` to main as
+`4fae87b932f1921e664608aad6c01bfb836f4e2f`. Both commits share tree
+`ce1b0f1e15cdb8d0f9a97a13bc61451e89241ebc`. A fresh Git fetch and GitHub's
+comparison returned zero file differences. Exact-head and merge CI passed.
+No deployment was recorded. PR #7 subsequently advanced main to
+`25ee0562d317146f267e9f8204cb6d0633954a45`.
+[GitHub comparison](https://github.com/mitchell-d00/Al-Betty-and-the-Outside/compare/49f33e2ce52b811ba09b482442b9905ff2cb4159...4fae87b932f1921e664608aad6c01bfb836f4e2f) ·
+[Exact-head CI](https://github.com/mitchell-d00/Al-Betty-and-the-Outside/actions/runs/46029972445) ·
+[Merge CI](https://github.com/mitchell-d00/Al-Betty-and-the-Outside/actions/runs/46030060067) ·
+[PR #7](https://github.com/mitchell-d00/Al-Betty-and-the-Outside/pull/7)
+
 ## Betty report for Al · Disposable Git effect
 
 Mitchell authorized local implementation and testing from
